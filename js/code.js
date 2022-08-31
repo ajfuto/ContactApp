@@ -11,14 +11,14 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	let login = document.getElementById("loginName").value;
-	let password = document.getElementById("loginPassword").value;
-//	var hash = md5( password );
+	let login = document.getElementById("username").value;
+	let password = document.getElementById("password").value;
+	// var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
 
 	let tmp = {login:login,password:password};
-//	var tmp = {login:login,password:hash};
+	// var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
 	let url = urlBase + '/Login.' + extension;
@@ -35,9 +35,10 @@ function doLogin()
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
 		
-				if( userId < 1 )
+				// if the user is not in our database
+				if(userId < 1)
 				{		
-					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+					document.getElementById("loginResult").innerHTML = "incorrect username/password";
 					return;
 				}
 		
@@ -46,7 +47,7 @@ function doLogin()
 
 				saveCookie();
 	
-				window.location.href = "color.html";
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);

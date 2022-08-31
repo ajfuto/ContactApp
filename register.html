@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Log In | mycontacts.lol</title>
+        <title>Register | mycontacts.lol</title>
         <link href="css/styles.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,7 +10,15 @@
     <body>
         <div class="main">
             <h2>MyContacts</h2>
-            <h3>welcome back!</h3>
+            <h3>create an account</h3>
+            <div class="user-input">
+                <p>first name</p>
+                <input id="firstname" type="text" name="" required="">
+            </div>
+            <div class="user-input">
+                <p>last name</p>
+                <input id="lastname" type="text" name="" required="">
+            </div>
             <div class="user-input">
                 <p>username</p>
                 <input id="username" type="text" name="" required="">
@@ -19,9 +27,9 @@
                 <p>password</p>
                 <input id="password" type="password" name="" required="">
             </div>
-            <button id="login" class="buttons" type="button" onclick="doLogin()">log in</button>
-            <div class='loginResult'></div>
-            <p>need an account? <a href="register.html">register</a></p>
+
+            <button id="login" class="buttons" type="button" onclick="register()">register</button>
+            <p><a href="index.html">already have an account?</a></p>
         </div>
     </body>
 </html>
