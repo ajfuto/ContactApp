@@ -8,8 +8,8 @@
     $email = $inData["Email"];
     $phoneNumber = $inData["PhoneNumber"];
     
-
     $conn = new mysqli("%", "hackerman", "WeWillGet100", "COP4331");
+    
     if($conn->connect_error)
     {
         returnWithError( $conn->connect_error );
