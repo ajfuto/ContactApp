@@ -7,7 +7,18 @@
 	$firstName = "";
 	$lastName = "";
 
-	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331"); 	
+
+	# open our secrets file
+	$secrets_file = fopen("../secrets/creds.txt", "r") or die("unable to open credentials file");
+
+	# fgets() reads an entire line from our file, rtrim() strips any new line characters
+	$mysql_user = rtrim(fgets($secrets_file));
+	$mysql_pass = rtrim(fgets($secrets_file));
+
+	# close our secrets file
+	fclose($secrets_file);
+
+	$conn = new mysqli("localhost", $mysql_user, $mysql_pass, "COP4331"); 	
 	if( $conn->connect_error )
 	{
 		returnWithError( $conn->connect_error );

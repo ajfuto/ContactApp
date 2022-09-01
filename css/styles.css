@@ -7,6 +7,7 @@
     --text-color: #FFFFFF;
     --button-color: #49D49D;
     --button-hover-color: #27AD78;
+    --error-color: #D7263D;
 
 }
 
@@ -53,6 +54,7 @@ body {
 
 .main p {
     padding: 0;
+    margin-top: 0;
     margin-bottom: 0.1rem;
     color: var(--text-color);
     text-align: left;
@@ -90,6 +92,12 @@ body {
     top: -25px;
     left: 0px;
     font-size: 0.8rem;
+}
+
+.main .loginResult {
+    color: var(--error-color);
+    padding: none;
+    margin: none;
 }
 
 #login {
