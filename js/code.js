@@ -1,4 +1,4 @@
-const urlBase = 'http://mycontacts.lol/LAMPAPI';
+const urlBase = 'http://dev.mycontacts.lol/LAMPAPI';
 const extension = 'php';
 
 let userId = 0;
