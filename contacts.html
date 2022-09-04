@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Contacts | mycontacts.lol</title>
+        <link href="css/styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
+
+        <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() 
+        {
+            readCookie();
+        }, false);
+	</script>
+    </head>
+
+    <body>
+        <div id="loggedInDiv">
+            <span id="userName"></span><br />
+            <button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+        </div>
+        <div class="main">
+            <h2>display all contacts here</h2>
+        </div>
+    </body>
+</html>

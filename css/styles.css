@@ -1,140 +1,118 @@
-body 
-{
-    background-color: #707070;
+:root {
+    --box-color: #242333;
+    --background-color: #21202E;
+    --input-color: #232231;
+    --primary-color: #01B0D3;
+    --secondary-color: #70a9a1;
+    --text-color: #FFFFFF;
+    --button-color: #49D49D;
+    --button-hover-color: #27AD78;
+    --error-color: #D7263D;
+
 }
 
-#title 
-{
-    font-size: 40px;
+html {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    background: var(--box-color);
+    box-sizing: border-box;
+    box-shadow:0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 50px;
+}
+
+.main h2 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.main h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.main p {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+    color: var(--text-color);
+    text-align: left;
+    text-decoration: none;
+}
+
+.main p a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main p a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.main .user-input {
+    position: relative;
+}
+
+.main .user-input input {
     width: 100%;
-    margin: 2% 5%;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    color: #FFFFFF;
+    padding: 15px 0;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: var(--background-color)
 }
 
-#loginDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
+.main .user-input input:focus ~ label,
+.main .user-input input:valid ~ label {
+    top: -25px;
+    left: 0px;
+    font-size: 0.8rem;
 }
 
-#loggedInDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
+.main .loginResult {
+    color: var(--error-color);
+    padding: none;
+    margin: none;
 }
 
-#accessUIDiv
-{
-    font-size: 30px;
-    width: 70%;
-    margin-left: 15%;
-    padding: 25px;
-    background-color: #b2b2b2;
+#login {
+    outline: 0;
+    background: var(--button-color);
+    width: 100%;
+    border: 0;
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
 }
 
-.buttons
-{
-    font-size: 30px;
-    border-radius: 25px;
-    width: 50%;
-    margin-left: 25%;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.buttons:hover{
-    background-color: #00d5124f;
-    color: #FFFFFF;
-    opacity: 50%;
-}
-
-#loginName
-{
-	font-size: 30px;
-}
-#loginPassword
-{
-	font-size: 30px;
-}
-#searchText
-{
-	font-size: 30px;
-}
-#colorText
-{
-	font-size: 30px;
-}
-
-input[type="text"],input[type="password"]{
-    border-radius: 25px;
-    text-align: center;
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-#inner-title{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
-}
-
-#loginResult{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-bottom: 2%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
-}
-
-#userName{
-    display: inline-block;
-    width: 80%;
-    margin-left: 10%;
-    text-align: center;
-}
-
-#logoutButton{
-    width: 20%;
-    margin-left: 40%;
-}
-
-select{
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 2%;
-    font-size: 0.75em;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-#colorSearchResult{
-    display: none;
-}
-
-#colorAddResult{
-    display: inline-block;
-    font-size: 0.8em;
-    width: 90%;
-    text-align: center;
-    margin-left: 5%;
-    margin-top: 2%;
-    margin-bottom: 1%;
-    font-family: 'Ubuntu', sans-serif;
-    color: #95060a;
+#login:hover {
+    background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
 }
