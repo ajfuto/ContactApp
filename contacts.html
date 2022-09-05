@@ -16,11 +16,26 @@
 
     <body>
         <div class="main">
-            <h2>display all contacts here</h2>
-        </div>
-        <div class = "main">
-            <span id="userName"></span><br />
-            <button type="button" id="logoutButton" class="buttons" onclick="doLogout();"> Log Out </button>
+            <h2>hello</h2>
+            <div>
+                <h3>search</h3>
+                <div class="user-input">
+                    <p>name</p>
+                    <input id="searchNameInput" type="text" name="" required="">
+                    <button id="searchNameButton" class="buttons" type="button">go</button>
+                </div>
+                <div class="user-input">
+                    <p>phone</p>
+                    <input id="searchPhone" type="text" name="" required="">
+                </div>
+                <div class="user-input">
+                    <p>email</p>
+                    <input id="searchEmail" type="text" name="" required="">
+                </div>
+            </div>
+            <button id="login" class="buttons" type="button" onclick="doLogin()">log in</button>
+            <div id="loginResult" class="loginResult"></div>
+            <p>need an account? <a href="register.html">register</a></p>
         </div>
     </body>
 </html>
