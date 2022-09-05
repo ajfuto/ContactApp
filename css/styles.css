@@ -117,6 +117,22 @@ body {
     cursor: pointer;
 }
 
+#login {
+    outline: 0;
+    background: var(--button-color);
+    width: 100%;
+    border: 0;
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#login:hover {
+    background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
+}
 
 form.example input[type=text] {
     width: 100%;
