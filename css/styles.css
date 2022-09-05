@@ -243,3 +243,8 @@ body {
     color: var(--text-color);
     text-align: center;
 }
+
+.modalTable {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
