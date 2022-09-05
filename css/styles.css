@@ -117,7 +117,7 @@ body {
     cursor: pointer;
 }
 
-#login {
+.button {
     outline: 0;
     background: var(--button-color);
     width: 100%;
@@ -128,45 +128,8 @@ body {
     font-size: 1rem;
 }
 
-#login:hover {
+.button:hover {
     background: var(--button-hover-color);
     transition: 0.25s;
     cursor: pointer;
 }
-
-form.example input[type=text] {
-    width: 100%;
-    padding: 15px 0;
-    color: var(--text-color);
-    margin-bottom: 20px;
-    padding-left: 15px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    background: var(--background-color)
-  }
-  
-  form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: var(--button-color);
-    color: var(--text-color);
-    font-size: 1rem;
-    border: 0;
-    border-left: none;
-    cursor: pointer;
-    outline: 0;
-  }
-  
-  form.example button:hover {
-    background: var(--button-hover-color);
-    transition: 0.25s;
-    cursor: pointer;
-  }
-  
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
