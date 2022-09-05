@@ -186,54 +186,60 @@ function searchColor()
 }
 
 
+function searchModalUp()
+{
+	// Modal Setup
+	// Get the modal
+	var searchModal = document.getElementById("searchModal");
 
+	// Get the button that opens the modal
+	var searchBtn = document.getElementById("searchBtn");
 
+	// Get the <span> element that closes the modal
+	var searchSpan = document.getElementsByClassName("close")[0];
 
-// Modal Setup
-// Get the modal
-var searchModal = document.getElementById("searchModal");
+	// When the user clicks the button, open the modal 
+	searchBtn.onclick = function() {
+	searchModal.style.display = "block";
+	}
 
-// Get the button that opens the modal
-var searchBtn = document.getElementById("searchBtn");
+	// When the user clicks on <span> (x), close the modal
+	searchSpan.onclick = function() {
+	searchModal.style.display = "none";
+	}
 
-// Get the <span> element that closes the modal
-var searchSpan = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-searchBtn.onclick = function() {
-  searchModal.style.display = "block";
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	if (event.target == searchModal) {
+		searchModal.style.display = "none";
+	}
+	}
 }
 
-// When the user clicks on <span> (x), close the modal
-searchSpan.onclick = function() {
-  searchModal.style.display = "none";
+
+
+function addModalUp()
+{
+	// Get the modal
+	var addModal = document.getElementById("addModal");
+
+	// Get the button that opens the modal
+	var addBtn = document.getElementById("addBtn");
+
+	var addSpan = document.getElementsByClassName("close")[1];
+	// When the user clicks the button, open the modal 
+	addBtn.onclick = function() {
+	addModal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	addSpan.onclick = function() {
+	addModal.style.display = "none";
+	}
+	window.onclick = function(event) {
+		if (event.target == addModal) {
+			addModal.style.display = "none";
+		}
+	}
 }
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == searchModal) {
-    searchModal.style.display = "none";
-  }
-  if (event.target == addModal) {
-    addModal.style.display = "none";
-  }
-}
-
-// Get the modal
-var addModal = document.getElementById("addModal");
-
-// Get the button that opens the modal
-var addBtn = document.getElementById("addBtn");
-
-var addSpan = document.getElementsByClassName("close")[1];
-// When the user clicks the button, open the modal 
-addBtn.onclick = function() {
-  addModal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-addSpan.onclick = function() {
-  addModal.style.display = "none";
-}
-
 
