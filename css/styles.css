@@ -248,3 +248,11 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+#contactsTable th{
+    margin-top: 50px;
+}
+
+#contactsTable tr{
+    min-height: 20px;
+}

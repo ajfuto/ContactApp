@@ -14,14 +14,14 @@
     <div class="main">
         <h2>hello, user</h2>
 
-        <table class = "modalTable" style="width:100%">
+        <table class="modalTable" style="width:100%">
             <tr>
                 <th>
-                    <button id="searchBtn" class = "button" onclick="searchModalUp()">search</button>
-            
+                    <button id="searchBtn" class="button" onclick="searchModalUp()">search</button>
+
                     <!-- The Modal -->
                     <div id="searchModal" class="modal">
-                
+
                         <!-- Modal content -->
                         <div class="modal-content">
                             <span class="close">&times;</span>
@@ -29,37 +29,49 @@
                             <input id="searchInput" type="text" name="" required="" class="modalInput">
                             <button id="searchNameButton" class="button">go</button>
                         </div>
-                
+
                     </div>
-                    </th>
-                    <th>
-                    <button id="addBtn" class = "button" onclick="addModalUp()">add</button>
-            
+                </th>
+                <th>
+                    <button id="addBtn" class="button" onclick="addModalUp()">add</button>
+
                     <!-- The Modal -->
                     <div id="addModal" class="modal">
-            
-                      <!-- Modal content -->
-                        <div class="modal-content">
-                        <span class="close">&times;</span>
 
-                        <h2>add contact</h2>
-                        <p>first name</p>
-                        <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                        <p>last name</p>
-                        <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                        <p>phone</p>
-                        <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                        <p>email</p>
-                        <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                        <button id="addButton" class="button">add</button>
-                      </div>
-            
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+
+                            <h2>add contact</h2>
+                            <p>first name</p>
+                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
+                            <p>last name</p>
+                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
+                            <p>phone</p>
+                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
+                            <p>email</p>
+                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
+                            <button id="addButton" class="button">add</button>
+                        </div>
+
                     </div>
                 </th>
             </tr>
         </table>
+        <table id="contactsTable">
+            <thead>
+                <tr>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>phone</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
     </div>
-
 </body>
 
 </html>
