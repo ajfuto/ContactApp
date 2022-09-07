@@ -142,6 +142,9 @@ function addColor()
 
 function searchContact()
 {
+	let searchModal = document.getElementById("searchModal");
+	searchModal.style.display = "none";
+	
 	let srch = document.getElementById("searchText").value;
 
 	let tmp = {search:srch,userId:userId};
