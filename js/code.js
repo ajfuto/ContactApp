@@ -140,17 +140,16 @@ function addColor()
 	
 }
 
-function searchColor()
+function searchContact()
 {
 	let srch = document.getElementById("searchText").value;
-	document.getElementById("colorSearchResult").innerHTML = "";
-	
-	let colorList = "";
 
 	let tmp = {search:srch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchColors.' + extension;
+
+	let table = document.getElementById("contactsTable");
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -166,14 +165,10 @@ function searchColor()
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
-					colorList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
-					{
-						colorList += "<br />\r\n";
-					}
+					let row = table.insertRow(i+1);
+					let cell1 = row.insertCell(0);
+					cell1.innerHTML = jsonObject.results[i];
 				}
-				
-				document.getElementsByTagName("p")[0].innerHTML = colorList;
 			}
 		};
 		xhr.send(jsonPayload);
