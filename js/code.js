@@ -190,13 +190,13 @@ function searchModalUp()
 {
 	// Modal Setup
 	// Get the modal
-	var searchModal = document.getElementById("searchModal");
+	let searchModal = document.getElementById("searchModal");
 
 	// Get the button that opens the modal
-	var searchBtn = document.getElementById("searchBtn");
+	let searchBtn = document.getElementById("searchBtn");
 
 	// Get the <span> element that closes the modal
-	var searchSpan = document.getElementsByClassName("close")[1];
+	let searchSpan = document.getElementsByClassName("close")[0];
 
 	// When the user clicks the button, open the modal 
 	searchBtn.onclick = function() {
@@ -221,12 +221,12 @@ function searchModalUp()
 function addModalUp()
 {
 	// Get the modal
-	var addModal = document.getElementById("addModal");
+	let addModal = document.getElementById("addModal");
 
 	// Get the button that opens the modal
-	var addBtn = document.getElementById("addBtn");
+	let addBtn = document.getElementById("addBtn");
 
-	var addSpan = document.getElementsByClassName("close")[1];
+	let addSpan = document.getElementsByClassName("close")[1];
 	// When the user clicks the button, open the modal 
 	addBtn.onclick = function() {
 	addModal.style.display = "block";
