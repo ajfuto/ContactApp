@@ -144,7 +144,7 @@ function searchContact()
 {
 	let searchModal = document.getElementById("searchModal");
 	searchModal.style.display = "none";
-	
+
 	let srch = document.getElementById("searchText").value;
 
 	let tmp = {search:srch,userId:userId};
@@ -196,6 +196,8 @@ function searchModalUp()
 	// Get the <span> element that closes the modal
 	let searchSpan = document.getElementsByClassName("close")[0];
 
+	let searchNameButton = document.getElementById("searchNameButton");
+
 	// When the user clicks the button, open the modal 
 	searchBtn.onclick = function() {
 	searchModal.style.display = "block";
@@ -205,6 +207,8 @@ function searchModalUp()
 	searchSpan.onclick = function() {
 	searchModal.style.display = "none";
 	}
+
+	searchNameButton.onclick = searchContact();
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
