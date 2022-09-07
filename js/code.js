@@ -208,7 +208,7 @@ function searchModalUp()
 
 	searchNameButton.onclick = function() {
 		searchModal.style.display = "none";
-		searchContact();
+		//searchContact();
 	}
 
 	// When the user clicks anywhere outside of the modal, close it
