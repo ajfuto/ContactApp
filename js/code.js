@@ -196,7 +196,7 @@ function searchModalUp()
 	var searchBtn = document.getElementById("searchBtn");
 
 	// Get the <span> element that closes the modal
-	var searchSpan = document.getElementsByClassName("close")[0];
+	var searchSpan = document.getElementsByClassName("close")[1];
 
 	// When the user clicks the button, open the modal 
 	searchBtn.onclick = function() {
