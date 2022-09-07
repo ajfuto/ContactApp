@@ -246,8 +246,14 @@ body {
 
 .modalTable {
     padding-top: 1rem;
+    padding-bottom: 1.5 rem;
+}
+
+#contactsTable {
+    padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
 
 #contactsTable th{
     margin-top: 50px;
