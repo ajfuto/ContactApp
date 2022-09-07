@@ -142,8 +142,6 @@ function addColor()
 
 function searchContact()
 {
-	let searchModal = document.getElementById("searchModal");
-	searchModal.style.display = "none";
 
 	let srch = document.getElementById("searchText").value;
 
@@ -208,7 +206,10 @@ function searchModalUp()
 	searchModal.style.display = "none";
 	}
 
-	searchNameButton.onclick = searchContact();
+	searchNameButton.onclick = function() {
+		searchModal.style.display = "none";
+		searchContact();
+	}
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
