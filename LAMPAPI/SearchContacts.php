@@ -20,7 +20,7 @@
 	{
 		# Search search string against all columns in Contacts table
 		$stmt = $conn->prepare("select * from Contacts where (FirstName like ? OR LastName like ? OR Email like ? OR PhoneNumber like ? OR CombinedString like ?) and UserID=?");
-		$searchString = "%" . implode($inData["search"]) . "%";
+		$searchString = "%" . $inData["search"] . "%";
 		$stmt->bind_param("ssssss", $searchString, $searchString, $searchString, $searchString, $searchString, $inData["userId"]);
 		$stmt->execute();
 		
