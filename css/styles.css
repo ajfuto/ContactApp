@@ -44,7 +44,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 500px;
+    width: 600px;
     transform: translate(-50%, -50%);
     background: var(--box-color);
     box-sizing: border-box;
@@ -216,6 +216,11 @@ body {
     color: var(--text-color);
     font-size: 1rem;
     float: right;
+}
+#addBtn:hover {
+    background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
 }
 
 .modalButton:hover {
