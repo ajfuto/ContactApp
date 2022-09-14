@@ -59,6 +59,61 @@ function doLogin()
 
 }
 
+function register()
+{
+	firstName = document.getElementById("firstname").value
+	lastName = document.getElementById("lastname").value
+	let login = document.getElementById("username").value;
+	let password = document.getElementById("password").value;
+
+	if(firstName == "" || lastName == "" || login == "" || password == ""){
+		document.getElementById("registerResult").innerHTML = "Please fill out each box completely"
+		return;
+	}
+
+	document.getElementById("registerResult").innerHTML = "";
+
+	let tmp = {FirstName:firstName,LastName:lastName,Login:login,Password:password};
+	// var tmp = {login:login,password:hash};
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/Registration.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				// if the user is not in our database
+				if(userId < 1)
+				{		
+					document.getElementById("registerResult").innerHTML = "incorrect username/password";
+					return;
+				}
+		
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+
+				saveCookie();
+	
+				window.location.href = "index.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("registerResult").innerHTML = err.message;
+	}
+}
+
 function saveCookie()
 {
 	let minutes = 20;
@@ -96,7 +151,7 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "Logged in as " + firstName + " " + lastName;
+		document.getElementById("userName").innerHTML = "hello " + firstName + " " + lastName;
 	}
 }
 
@@ -140,17 +195,16 @@ function addColor()
 	
 }
 
-function searchColor()
+function searchContact()
 {
 	let srch = document.getElementById("searchText").value;
-	document.getElementById("colorSearchResult").innerHTML = "";
-	
-	let colorList = "";
 
 	let tmp = {search:srch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/SearchColors.' + extension;
+
+	let table = document.getElementById("contactsTable");
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -166,14 +220,10 @@ function searchColor()
 				
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
-					colorList += jsonObject.results[i];
-					if( i < jsonObject.results.length - 1 )
-					{
-						colorList += "<br />\r\n";
-					}
+					let row = table.insertRow(i+1);
+					let cell1 = row.insertCell(0);
+					cell1.innerHTML = jsonObject.results[i];
 				}
-				
-				document.getElementsByTagName("p")[0].innerHTML = colorList;
 			}
 		};
 		xhr.send(jsonPayload);
@@ -184,3 +234,69 @@ function searchColor()
 	}
 	
 }
+
+
+function searchModalUp()
+{
+	// Modal Setup
+	// Get the modal
+	let searchModal = document.getElementById("searchModal");
+
+	// Get the button that opens the modal
+	let searchBtn = document.getElementById("searchBtn");
+
+	// Get the <span> element that closes the modal
+	let searchSpan = document.getElementsByClassName("close")[0];
+
+	let searchNameButton = document.getElementById("searchNameButton");
+
+	// When the user clicks the button, open the modal 
+	searchBtn.onclick = function() {
+	searchModal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	searchSpan.onclick = function() {
+	searchModal.style.display = "none";
+	}
+
+	searchNameButton.onclick = function() {
+		searchModal.style.display = "none";
+		//searchContact();
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	if (event.target == searchModal) {
+		searchModal.style.display = "none";
+	}
+	}
+}
+
+
+
+function addModalUp()
+{
+	// Get the modal
+	let addModal = document.getElementById("addModal");
+
+	// Get the button that opens the modal
+	let addBtn = document.getElementById("addBtn");
+
+	let addSpan = document.getElementsByClassName("close")[0];
+	// When the user clicks the button, open the modal 
+	addBtn.onclick = function() {
+	addModal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	addSpan.onclick = function() {
+	addModal.style.display = "none";
+	}
+	window.onclick = function(event) {
+		if (event.target == addModal) {
+			addModal.style.display = "none";
+		}
+	}
+}
+

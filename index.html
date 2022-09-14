@@ -1,28 +1,30 @@
 <html>
-    <head>
-        <title>Log In | mycontacts.lol</title>
-        <link href="css/styles.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-	<script type="text/javascript" src="js/code.js"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
-    </head>
 
-    <body>
-        <div class="main">
-            <h2>MyContacts</h2>
-            <h3>welcome back!</h3>
-            <div class="user-input">
-                <p>username</p>
-                <input id="username" type="text" name="" required="">
-            </div>
-            <div class="user-input">
-                <p>password</p>
-                <input id="password" type="password" name="" required="">
-            </div>
-            <button id="login" class="buttons" type="button" onclick="doLogin()">log in</button>
-            <div id="loginResult" class="loginResult"></div>
-            <p>need an account? <a href="register.html">register</a></p>
+<head>
+    <title>Log In | mycontacts.lol</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script type="text/javascript" src="js/code.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <h2>MyContacts</h2>
+        <h3>welcome back!</h3>
+        <div class="user-input">
+            <p>username</p>
+            <input id="username" type="text" placeholder="username" name="" required="">
         </div>
-    </body>
+        <div class="user-input">
+            <p>password</p>
+            <input id="password" type="password" placeholder="password" name="" required="">
+        </div>
+        <button id="login" class="buttons" type="button" onclick="doLogin()">log in</button>
+        <div id="loginResult" class="loginResult"></div>
+        <p>need an account? <a href="register.html">register</a></p>
+    </div>
+</body>
+
 </html>
