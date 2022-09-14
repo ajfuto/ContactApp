@@ -308,6 +308,7 @@ body {
 .searchContactClass h3{
     font-size: 1.25rem;
     margin: 0;
+    margin-top: 20px;
     margin-bottom: 10px;
     padding: 0;
     color: var(--text-color);
@@ -327,7 +328,7 @@ body {
     background: var(--background-color)
 }
 
-.searchContactClass button 
+#searchButton
 {
     float: right;
     width: 20%;
@@ -342,7 +343,7 @@ body {
     font-size: 1rem;
 }
 
-.searchContent button:hover {
+#searchButton:hover {
     background: var(--button-hover-color);
     transition: 0.25s;
     cursor: pointer;
