@@ -205,10 +205,10 @@ body {
     cursor: pointer;
   }
 
-  .modalButton {
+  #addBtn {
     outline: 0;
     background: var(--button-color);
-    width: 20%;
+    width: 10%;
     border: 0;
     padding: 10px;
     border-radius: 5px;
