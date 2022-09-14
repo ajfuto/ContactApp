@@ -329,7 +329,7 @@ body {
 
 .searchContactClass button 
 {
-    float: left;
+    float: right;
     width: 20%;
     background: var(--button-color);
     border-left: none;
