@@ -89,7 +89,7 @@ function register()
 				// if the user is not in our database
 				if(userId < 1)
 				{		
-					document.getElementById("loginResult").innerHTML = "incorrect username/password";
+					document.getElementById("registerResult").innerHTML = "incorrect username/password";
 					return;
 				}
 		
@@ -98,14 +98,14 @@ function register()
 
 				saveCookie();
 	
-				window.location.href = "contacts.html";
+				window.location.href = "index.html";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("registerResult").innerHTML = err.message;
 	}
 }
 
