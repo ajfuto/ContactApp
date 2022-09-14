@@ -206,6 +206,7 @@ body {
   }
 
   #addBtn {
+    vertical-align:top;
     outline: 0;
     background: var(--button-color);
     width: 10%;
