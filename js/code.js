@@ -66,6 +66,11 @@ function register()
 	let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
 
+	if(firstName == "" || lastName == "" || login == "" || password == ""){
+		document.getElementById("registerResult").innerHTML = "Please fill out each box completely"
+		return;
+	}
+
 	document.getElementById("registerResult").innerHTML = "";
 
 	let tmp = {FirstName:firstName,LastName:lastName,Login:login,Password:password};
@@ -192,13 +197,6 @@ function addColor()
 
 function searchContact()
 {
-	let searchModal = document.getElementById("searchModal");
-	let searchNameButton = document.getElementById("searchNameButton");
-	searchNameButton.onclick = function() {
-		searchModal.style.display = "none";
-		//searchContact();
-	}
-
 	let srch = document.getElementById("searchText").value;
 
 	let tmp = {search:srch,userId:userId};
