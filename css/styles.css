@@ -10,6 +10,16 @@
     --error-color: #D7263D;
 
 }
+#userName{
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+}
 
 h1{
     font-size: 2.5rem;
@@ -204,6 +214,7 @@ body {
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;
+    float: right;
 }
 
 .modalButton:hover {
@@ -309,6 +320,7 @@ body {
     outline: none;
     background: var(--background-color)
 }
+
 .searchContactClass button 
 {
     float: left;
@@ -322,4 +334,10 @@ body {
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;
+}
+
+.searchContent button:hover {
+    background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
 }
