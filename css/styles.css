@@ -100,7 +100,7 @@ body {
     margin: none;
 }
 
-#login {
+#login{
     outline: 0;
     background: var(--button-color);
     width: 100%;

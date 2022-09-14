@@ -61,14 +61,14 @@ function doLogin()
 
 function register()
 {
-	let firstName = document.getElementById("firstname").value
-	let lastName = document.getElementById("lastname").value
+	firstName = document.getElementById("firstname").value
+	lastName = document.getElementById("lastname").value
 	let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
 
 	document.getElementById("registerResult").innerHTML = "";
 
-	let tmp = {login:login,password:password};
+	let tmp = {FirstName:firstName,LastName:lastName,Login:login,Password:password};
 	// var tmp = {login:login,password:hash};
 	let jsonPayload = JSON.stringify( tmp );
 	
