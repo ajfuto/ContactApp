@@ -65,6 +65,48 @@ function register()
 	let lastName = document.getElementById("lastname").value
 	let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
+
+	document.getElementById("registerResult").innerHTML = "";
+
+	let tmp = {login:login,password:password};
+	// var tmp = {login:login,password:hash};
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/Registration.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				// if the user is not in our database
+				if(userId < 1)
+				{		
+					document.getElementById("loginResult").innerHTML = "incorrect username/password";
+					return;
+				}
+		
+				firstName = jsonObject.firstName;
+				lastName = jsonObject.lastName;
+
+				saveCookie();
+	
+				window.location.href = "contacts.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
 }
 
 function saveCookie()
