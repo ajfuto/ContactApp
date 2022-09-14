@@ -297,3 +297,29 @@ body {
     color: var(--text-color);
     text-align: left;
 }
+.searchContactClass input {
+    width: 80%;
+    float: left;
+    padding: 10px 0;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: var(--background-color)
+}
+.searchContactClass button 
+{
+    float: left;
+    width: 20%;
+    background: var(--button-color);
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
