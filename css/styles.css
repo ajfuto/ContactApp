@@ -318,7 +318,7 @@ body {
     float: left;
     padding: 20px 0;
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding-left: 15px;
     border: none;
     border-radius: 5px;
@@ -335,7 +335,7 @@ body {
     cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 20px;
+    padding: 15px;
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;

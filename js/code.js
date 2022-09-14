@@ -283,7 +283,7 @@ function addModalUp()
 	// Get the button that opens the modal
 	let addBtn = document.getElementById("addBtn");
 
-	let addSpan = document.getElementsByClassName("close")[1];
+	let addSpan = document.getElementsByClassName("close")[0];
 	// When the user clicks the button, open the modal 
 	addBtn.onclick = function() {
 	addModal.style.display = "block";
