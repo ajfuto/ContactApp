@@ -30,8 +30,8 @@
 		$stmt->close();
 		$conn->close();
 		returnWithError("");
-
     	} 
+		
 	else
 	{
 		returnWithError( "Username taken. Please try again." )
