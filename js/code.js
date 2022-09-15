@@ -67,7 +67,7 @@ function register()
 	let password = document.getElementById("password").value;
 
 	if(firstName == "" || lastName == "" || login == "" || password == ""){
-		document.getElementById("registerResult").innerHTML = "Please fill out each box completely"
+		document.getElementById("registerResult").innerHTML = "please fill out each box completely"
 		return;
 	}
 
@@ -89,17 +89,14 @@ function register()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				userId = jsonObject.id;
+				error = jsonObject.error;
 		
 				// if the user is not in our database
-				if(userId < 1)
-				{		
-					document.getElementById("registerResult").innerHTML = "incorrect username/password";
+				if (error !== "")
+				{
+					document.getElementById("registerResult").innerHTML = error;
 					return;
 				}
-		
-				firstName = jsonObject.firstName;
-				lastName = jsonObject.lastName;
 
 				saveCookie();
 	

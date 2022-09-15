@@ -22,21 +22,20 @@
 	{
 		returnWithError( $conn->connect_error );
 	}
-    	else if ( !findUser($login) )
-    	{
+	else if (userExists($login, $conn))
+	{
+ 		returnWithError('username taken. please try another.');
+	}
+	else
+	{
 		$stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES (?,?,?,?)");
 		$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
 		returnWithError("");
-    	} 
-		
-	else
-	{
-		returnWithError( "Username taken. Please try again." )
-	}
-
+	} 
+	
 	function getRequestInfo()
 	{
 		return json_decode(file_get_contents('php://input'), true);
@@ -54,23 +53,20 @@
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function findUser( $login )
+	function userExists($login, $conn)
 	{
-		$stmt = $conn->prepare("Select * from Users where Login = ?");
+		$stmt = $conn->prepare("SELECT * FROM Users WHERE Login = ?");
 		$stmt->bind_param("s", $login);
 		$stmt->execute();
 
-		if( ($result=mysql_query("Select * from Users where Login = $stmt")) )
+		$result = $stmt->get_result();
+
+		if ($result->num_rows > 0)
 		{
-			if(mysql_num_rows($result)) 
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return true;
 		}
+		return false;
+
 	}
 	
 ?>
