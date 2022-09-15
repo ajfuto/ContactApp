@@ -13,6 +13,12 @@ function doLogin()
 	
 	let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
+
+	if (login == "" || password == "")
+	{
+		document.getElementById("loginResult").innerHTML = "please fill out each box completely";
+		return;
+	}
 	// var hash = md5( password );
 	
 	document.getElementById("loginResult").innerHTML = "";
