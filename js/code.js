@@ -5,6 +5,15 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+function searchOnEnterReg()
+{
+	if(event.key == 'Enter')
+	{
+		register();
+	}
+}
+
+
 function doLogin()
 {
 	userId = 0;
