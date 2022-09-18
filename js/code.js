@@ -264,8 +264,10 @@ function searchContact()
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
 					if(i%4==0)
+					{
 						j++;
 						row = table.insertRow(j);
+					}
 					let cell1 = row.insertCell(i%4);
 					cell1.innerHTML = jsonObject.results[i];
 				}
