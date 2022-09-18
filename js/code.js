@@ -201,13 +201,17 @@ function doLogout()
 
 function addContact()
 {
-	let newColor = document.getElementById("colorText").value;
-	document.getElementById("colorAddResult").innerHTML = "";
+	let fname = document.getElementById("firstNameInput").value;
+	let lname = document.getElementById("lastNameInput").value;
+	let number = document.getElementById("phoneInput").value;
+	let email = document.getElementById("emailInput").value;
 
-	let tmp = {color:newColor,userId,userId};
+	document.getElementById("contactAddResult").innerHTML = "";
+
+	let tmp = {firstName:fname, lastName:lname, email: email, phoneNumber:number  ,userId,userId};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/AddColor.' + extension;
+	let url = urlBase + '/AddContact.' + extension;
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -218,14 +222,14 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorAddResult").innerHTML = "Color has been added";
+				document.getElementById("contactAddResult").innerHTML = "Color has been added";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("colorAddResult").innerHTML = err.message;
+		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
 	
 }
@@ -244,6 +248,8 @@ function searchContact()
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+
+	//$("#contactsTable tbody tr").remove(); 
 	try
 	{
 		xhr.onreadystatechange = function() 
