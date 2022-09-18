@@ -7,7 +7,7 @@ let lastName = "";
 
 function searchOnEnterReg()
 {
-	if(event.key == 'Enter')
+	if(event.keyCode == 13)
 	{
 		register();
 	}
