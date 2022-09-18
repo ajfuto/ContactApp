@@ -250,7 +250,7 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				//document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
+				document.getElementById("searchResult").innerHTML = "Contact(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
 				let j = 0
@@ -269,12 +269,12 @@ function searchContact()
 	}
 	catch(err)
 	{
-		document.getElementById("colorSearchResult").innerHTML = err.message;
+		document.getElementById("searchResult").innerHTML = err.message;
 	}
 	
 }
 
-
+/*
 function searchModalUp()
 {
 	// Modal Setup
@@ -311,7 +311,7 @@ function searchModalUp()
 	}
 	}
 }
-
+*/
 
 
 function addModalUp()
