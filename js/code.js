@@ -237,7 +237,7 @@ function searchContact()
 	let tmp = {search:srch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
-	let url = urlBase + '/SearchColors.' + extension;
+	let url = urlBase + '/SearchContacts.' + extension;
 
 	let table = document.getElementById("contactsTable");
 	
@@ -250,13 +250,17 @@ function searchContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
+				//document.getElementById("colorSearchResult").innerHTML = "Color(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				
+				let j = 0
+				let row;
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
-					let row = table.insertRow(i+1);
-					let cell1 = row.insertCell(0);
+					if(i%4==0)
+						j++;
+						row = table.insertRow(j);
+					let cell1 = row.insertCell(i%4);
 					cell1.innerHTML = jsonObject.results[i];
 				}
 			}
