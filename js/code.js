@@ -12,6 +12,29 @@ function searchOnEnterReg()
 		register();
 	}
 }
+function searchOnEnterLogin()
+{
+	if(event.keyCode == 13)
+	{
+		doLogin();
+	}
+}
+
+function searchOnEnterSearch()
+{
+	if(event.keyCode == 13)
+	{
+		searchContact();
+	}
+}
+
+function searchOnEnterAdd()
+{
+	if(event.keyCode == 13)
+	{
+		addContact();
+	}
+}
 
 
 function doLogin()
@@ -163,7 +186,7 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("userName").innerHTML = "hello " + firstName + " " + lastName;
+		document.getElementById("loadUserName").innerHTML = "hello " + firstName + " " + lastName;
 	}
 }
 
@@ -176,7 +199,7 @@ function doLogout()
 	window.location.href = "index.html";
 }
 
-function addColor()
+function addContact()
 {
 	let newColor = document.getElementById("colorText").value;
 	document.getElementById("colorAddResult").innerHTML = "";
