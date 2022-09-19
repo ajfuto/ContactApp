@@ -208,7 +208,7 @@ function addContact()
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	let tmp = {firstName:fname, lastName:lname, email: email, phoneNumber:number  ,userId,userId};
+	let tmp = {firstName:fname,lastName:lname,email:email,phoneNumber:number,userId,userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/AddContact.' + extension;
@@ -332,16 +332,20 @@ function addModalUp()
 
 	let addSpan = document.getElementsByClassName("close")[0];
 	// When the user clicks the button, open the modal 
-	addBtn.onclick = function() {
-	addModal.style.display = "block";
+	addBtn.onclick = function() 
+	{
+		addModal.style.display = "block";
 	}
 
 	// When the user clicks on <span> (x), close the modal
-	addSpan.onclick = function() {
-	addModal.style.display = "none";
+	addSpan.onclick = function() 
+	{
+		addModal.style.display = "none";
 	}
-	window.onclick = function(event) {
-		if (event.target == addModal) {
+	window.onclick = function(event) 
+	{
+		if (event.target == addModal) 
+		{
 			addModal.style.display = "none";
 		}
 	}
