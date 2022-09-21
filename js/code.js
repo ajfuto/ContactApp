@@ -1,6 +1,10 @@
 const urlBase = 'http://dev.mycontacts.lol/LAMPAPI';
 const extension = 'php';
 
+document.addEventListener('DOMContentLoaded', function () {
+	readCookie();
+});
+
 let userId = 0;
 let firstName = "";
 let lastName = "";
@@ -179,6 +183,7 @@ function readCookie()
 			userId = parseInt( tokens[1].trim() );
 		}
 	}
+	console.log(userId);
 	
 	if( userId < 0 )
 	{
@@ -186,7 +191,7 @@ function readCookie()
 	}
 	else
 	{
-		document.getElementById("loadUserName").innerHTML = "hello " + firstName + " " + lastName;
+		document.getElementById("loadUserName").innerHTML = "hello, " + firstName + " " + lastName;
 	}
 }
 
@@ -201,6 +206,7 @@ function doLogout()
 
 function addContact()
 {
+	readCookie();
 	let fname = document.getElementById("firstNameInput").value;
 	let lname = document.getElementById("lastNameInput").value;
 	let number = document.getElementById("phoneInput").value;
@@ -208,7 +214,7 @@ function addContact()
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
-	let tmp = {firstName:fname,lastName:lname,email:email,phoneNumber:number,userId,userId};
+	let tmp = {FirstName:fname,LastName:lname,Email:email,PhoneNumber:number,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/AddContact.' + extension;
@@ -222,7 +228,9 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactAddResult").innerHTML = "Color has been added";
+				document.getElementById("contactAddResult").innerHTML = "contact has been added";
+				let addModal = document.getElementById("addModal");
+				addModal.style.display = "none";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -237,6 +245,8 @@ function addContact()
 function searchContact()
 {
 	let srch = document.getElementById("searchText").value;
+
+	console.log(srch);
 
 	let tmp = {search:srch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
@@ -258,18 +268,39 @@ function searchContact()
 			{
 				document.getElementById("searchResult").innerHTML = "Contact(s) has been retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
+				console.log(jsonObject);
 				
 				let j = 0
-				let row;
+				// let row;
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
-					if(i%4==0)
-					{
-						j++;
-						row = table.insertRow(j);
-					}
-					let cell1 = row.insertCell(i%4);
-					cell1.innerHTML = jsonObject.results[i];
+					let row = table.insertRow();
+					let currContact = jsonObject.results[i]
+					console.log(currContact);
+					// if(i%4==0)
+					// {
+					// 	j++;
+					// 	row = table.insertRow(j);
+					// }
+
+					// console.log(jsonObject[i]);
+					console.log(currContact.FirstName);
+					let cell = row.insertCell();
+					cell.innerHTML = currContact.FirstName;
+
+					cell = row.insertCell();
+					cell.innerHTML = currContact.LastName;
+
+					cell = row.insertCell();
+					cell.innerHTML = currContact.PhoneNumber;
+
+					cell = row.insertCell();
+					cell.innerHTML = currContact.Email;
+
+
+					// row.insertCell(jsonObjects[i]["FirstName"]);
+					// let cell = row.insertCell();
+					// cell1.innerHTML = jsonObject.results[i];
 				}
 			}
 		};
