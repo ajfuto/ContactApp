@@ -187,7 +187,7 @@ function readCookie()
 	
 	if( userId < 0 )
 	{
-		window.location.href = "index.html";
+		// window.location.href = "index.html";
 	}
 	else
 	{
