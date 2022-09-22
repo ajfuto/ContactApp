@@ -2,7 +2,7 @@
     --box-color: #272637;
     --background-color: #21202E;
     --input-color: #1e1d2a;
-    --primary-color: #01B0D3;
+    --primary-color: #006276;
     --secondary-color: #70a9a1;
     --text-color: #FFFFFF;
     --button-color: #1B875C;
@@ -278,6 +278,7 @@ body {
 #contactsTable {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    border-collapse: collapse;
 }
 
 
@@ -314,14 +315,15 @@ body {
     color: var(--text-color);
 }
 
-/* .searchContactClass{
-    padding: 10px;
-} */
-
-#tableBody td {
+#tableBody tr td {
     text-align: center;
+    color: var(--text-color);
 }
 
+#tableBody tr:not(:empty) {
+    border-bottom: 2px solid var(--primary-color);
+    border-top: 2px solid var(--primary-color);
+}
 
 .searchContactClass h3{
     font-size: 1.25rem;
@@ -332,6 +334,7 @@ body {
     color: var(--text-color);
     text-align: left;
 }
+
 .searchContactClass input {
     width: 80%;
     /* float: left; */

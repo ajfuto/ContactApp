@@ -3,7 +3,7 @@
 <head>
     <title>Contacts | mycontacts.lol</title>
     <script src="https://kit.fontawesome.com/6901f3fa14.js" crossorigin="anonymous"></script>
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/contacts.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -17,17 +17,16 @@
 
 <body>
     <h1><span id="loadUserName">hello, user</span></h1>
-
     <div class="main">
         <div>
             <button id="addBtn" class="button" onclick="addModalUp()"><i class="fa-regular fa-plus"></i></button>
-
+            <!-- The modal that shows the add -->
             <div id="addModal" class="modal">
 
                 <div class="modal-content">
                     <span class="close">&times;</span>
 
-                    <h2>add contact</h2>
+                    <h2>Add Contact</h2>
                     <p>first name</p>
                     <input id="firstNameInput" type="text" name="" required="" class="modalInput"
                         onkeyup="searchOnEnterAdd()" />
@@ -44,6 +43,49 @@
                     <span id="contactAddResult"></span>
                 </div>
 
+            </div>
+            <!-- The modal that shows view -->
+            <div id="viewModal" class="modal">
+
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>View Contact</h2>
+                    <p>first name</p>
+                    <input id="firstNameInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>last name</p>
+                    <input id="lastNameInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>phone</p>
+                    <input id="phoneInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>email</p>
+                    <input id="emailInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <button id="addButton" class="button" onclick="addContact()">add</button>
+                    <span id="contactAddResult"></span>
+                </div>
+            </div>
+            <!-- The modal that shows edit screen -->
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>edit contact</h2>
+                    <p>first name</p>
+                    <input id="firstNameInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>last name</p>
+                    <input id="lastNameInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>phone</p>
+                    <input id="phoneInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>email</p>
+                    <input id="emailInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <button id="addButton" class="button" onclick="addContact()">add</button>
+                    <span id="contactAddResult"></span>
+                </div>
             </div>
             <h2>your contacts</h2>
         </div>
