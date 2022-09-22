@@ -297,7 +297,8 @@ body {
     text-align: center;
 }
 
-#contactsTable p{
+#contactsTable p
+{
     padding: 0;
     margin-top: 0;
     margin-bottom: 0.1rem;
@@ -306,9 +307,15 @@ body {
     text-decoration: none;
 }
 
-.searchContactClass{
-    padding: 10px;
+#contactsTable td
+{
+    text-align: left;
+    color: var(--text-color);
 }
+
+/* .searchContactClass{
+    padding: 10px;
+} */
 
 .searchContactClass h3{
     font-size: 1.25rem;
@@ -321,8 +328,8 @@ body {
 }
 .searchContactClass input {
     width: 80%;
-    float: left;
-    padding: 15px 0;
+    /* float: left; */
+    padding: 16px 0;
     color: var(--text-color);
     font-size: 1rem;
     margin-bottom: 20px;
@@ -342,10 +349,10 @@ body {
     cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 15px;
+    padding: 16px;
     border-radius: 5px;
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 19;
 }
 
 #searchButton:hover {

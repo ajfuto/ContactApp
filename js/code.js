@@ -20,6 +20,7 @@ function searchOnEnterLogin()
 {
 	if(event.keyCode == 13)
 	{
+		console.log("searchOnEnterLogin triggered")
 		doLogin();
 	}
 }
@@ -28,6 +29,7 @@ function searchOnEnterSearch()
 {
 	if(event.keyCode == 13)
 	{
+		console.log("searchOnEnterSearch triggered");
 		searchContact();
 	}
 }
@@ -38,6 +40,11 @@ function searchOnEnterAdd()
 	{
 		addContact();
 	}
+}
+
+function liveSearchContacts()
+{
+	searchContact();
 }
 
 
@@ -185,9 +192,11 @@ function readCookie()
 	}
 	console.log(userId);
 	
-	if( userId < 0 )
+	console.log(userId < 0 && window.location.href.indexOf("contacts.html") != -1);
+	if( userId < 0 && window.location.href.indexOf("contacts.html") != -1)
 	{
-		// window.location.href = "index.html";
+		console.log('invalid user ID, redirecting');
+		window.location.href = "/";
 	}
 	else
 	{
@@ -244,6 +253,7 @@ function addContact()
 
 function searchContact()
 {
+	console.log("search triggered");
 	let srch = document.getElementById("searchText").value;
 
 	console.log(srch);
@@ -253,20 +263,26 @@ function searchContact()
 
 	let url = urlBase + '/SearchContacts.' + extension;
 
-	let table = document.getElementById("contactsTable");
+	let table = document.getElementById("tableBody");
+	let tBody = document.getElementById("tableBody");
+	tBody.innerHTML = "";
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	console.log("request header set");
 
 	//$("#contactsTable tbody tr").remove(); 
 	try
 	{
+		console.log("inside try");
 		xhr.onreadystatechange = function() 
 		{
+			console.log("inside function");
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("searchResult").innerHTML = "Contact(s) has been retrieved";
+				console.log("inside if");
+				document.getElementById("searchResult").innerHTML = "contact(s) retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				console.log(jsonObject);
 				
@@ -297,18 +313,24 @@ function searchContact()
 					cell = row.insertCell();
 					cell.innerHTML = currContact.Email;
 
-
 					// row.insertCell(jsonObjects[i]["FirstName"]);
 					// let cell = row.insertCell();
 					// cell1.innerHTML = jsonObject.results[i];
 				}
 			}
+			else
+			{
+				console.log("state" + this.readyState)
+				console.log("status " + this.status)
+			}
 		};
+		console.log(jsonPayload);
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("searchResult").innerHTML = err.message;
+		console.log('this is broken');
+		document.getElementById("searchResult").innerHTML = "dummy";
 	}
 	
 }
