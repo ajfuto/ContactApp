@@ -318,6 +318,7 @@ body {
 #tableBody tr td {
     text-align: center;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 #tableBody tr:not(:empty) {

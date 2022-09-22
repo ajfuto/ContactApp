@@ -46,24 +46,23 @@
             </div>
             <!-- The modal that shows view -->
             <div id="viewModal" class="modal">
-
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>View Contact</h2>
                     <p>first name</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
+                    <div id="firstNameInput" class="modalInput"></div>
                     <p>last name</p>
-                    <input id="lastNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
+                    <div id="lastNameInput" class="modalInput">
+                    </div>
                     <p>phone</p>
-                    <input id="phoneInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
+                    <div id="phoneInput" class="modalInput">
+                    </div>
                     <p>email</p>
-                    <input id="emailInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <button id="addButton" class="button" onclick="addContact()">add</button>
-                    <span id="contactAddResult"></span>
+                    <div id="emailInput" class="modalInput">
+                    </div>
+                    <button id="cancelButton" class="button" onclick="addContact()">Cancel</button>
+                    <button id="doneButton" class="button" onclick="addContact()">Done</button>
+                    <button id="editButton" class="button" onclick="addContact()">Edit</button>
                 </div>
             </div>
             <!-- The modal that shows edit screen -->
@@ -83,8 +82,8 @@
                     <p>email</p>
                     <input id="emailInput" type="text" name="" required="" class="modalInput"
                         onkeyup="searchOnEnterAdd()" />
-                    <button id="addButton" class="button" onclick="addContact()">add</button>
-                    <span id="contactAddResult"></span>
+                    <button id="backButton" class="button" onclick="addContact()">Back</button>
+                    <button id="applyButton" class="button" onclick="addContact()">Apply</button>
                 </div>
             </div>
             <h2>your contacts</h2>
@@ -98,7 +97,7 @@
 
         <div id="searchResult" class="searchResult"></div>
 
-        <table id="contactsTable" style="width:100%">
+        <table id="contactsTable" style="width:100%" onclick="viewModalUp()">
             <thead>
                 <tr>
                     <th>

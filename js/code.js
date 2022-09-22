@@ -404,3 +404,18 @@ function addModalUp()
 	}
 }
 
+function viewModalUp(){
+	//Get the modal
+	let viewModal = document.getElementById("viewModal");
+
+	let tbody = document.querySelector("#tableBody");
+	tbody.addEventListener('click', (e) => {
+		const cell = e.target.closest('td');
+		if(!cell) {return;} //not a row
+		const row  = cell.parentElement;
+		console.log(row.rowIndex);
+	});
+
+	
+
+}
