@@ -19,31 +19,7 @@
     <h1><span id="loadUserName">hello, user</span></h1>
     <div class="main">
         <div>
-            <button id="addBtn" class="button" onclick="addModalUp()"><i class="fa-regular fa-plus"></i></button>
-            <!-- The modal that shows the add -->
-            <div id="addModal" class="modal">
-
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-
-                    <h2>Add Contact</h2>
-                    <p>first name</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>last name</p>
-                    <input id="lastNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>phone</p>
-                    <input id="phoneInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>email</p>
-                    <input id="emailInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <button id="addButton" class="button" onclick="addContact()">add</button>
-                    <span id="contactAddResult"></span>
-                </div>
-
-            </div>
+            
             <!-- The modal that shows view -->
             <div id="viewModal" class="modal">
                 <div class="modal-content">
@@ -92,7 +68,32 @@
             <h3>search</h3>
             <input type="text" id="searchText" placeholder="search for a contact" name="" required=""
                 onkeyup="liveSearchContacts()" />
-            <button id="searchButton" onclick="searchContact()"><i class="fa fa-search"></i></button>
+            <!-- <button id="searchButton" onclick="searchContact()"><i class="fa fa-search"></i></button> -->
+            <button id="addBtn" class="button" onclick="addModalUp()"><i class="fa-regular fa-plus"></i></button>
+            <!-- The modal that shows the add -->
+            <div id="addModal" class="modal">
+
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+
+                    <h2>Add Contact</h2>
+                    <p>first name</p>
+                    <input id="firstNameInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>last name</p>
+                    <input id="lastNameInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>phone</p>
+                    <input id="phoneInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <p>email</p>
+                    <input id="emailInput" type="text" name="" required="" class="modalInput"
+                        onkeyup="searchOnEnterAdd()" />
+                    <button id="addButton" class="button" onclick="addContact()">add</button>
+                    <span id="contactAddResult"></span>
+                </div>
+
+            </div>
         </div>
 
         <div id="searchResult" class="searchResult"></div>
