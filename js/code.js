@@ -196,7 +196,7 @@ function readCookie()
 	if( userId < 0 && window.location.href.indexOf("contacts.html") != -1)
 	{
 		console.log('invalid user ID, redirecting');
-		window.location.href = "/";
+		// window.location.href = "/";
 	}
 	else
 	{
@@ -239,7 +239,7 @@ function addContact()
 			{
 				document.getElementById("contactAddResult").innerHTML = "contact has been added";
 				let addModal = document.getElementById("addModal");
-				addModal.style.display = "none";
+				addModal.style.opacity = "0";
 			}
 		};
 		xhr.send(jsonPayload);
@@ -385,21 +385,23 @@ function addModalUp()
 
 	let addSpan = document.getElementsByClassName("close")[0];
 	// When the user clicks the button, open the modal 
-	addBtn.onclick = function() 
-	{
-		addModal.style.display = "block";
-	}
+	addModal.style.opacity = "1";
+	addModal.style.pointerEvents = "all";
 
 	// When the user clicks on <span> (x), close the modal
 	addSpan.onclick = function() 
 	{
-		addModal.style.display = "none";
+		addModal.style.opacity = "0";
+		addModal.style.pointerEvents = "none";
+
 	}
 	window.onclick = function(event) 
 	{
 		if (event.target == addModal) 
 		{
-			addModal.style.display = "none";
+			addModal.style.opacity = "0";
+			addModal.style.pointerEvents = "none";
+
 		}
 	}
 }

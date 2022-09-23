@@ -12,113 +12,85 @@
             readCookie();
         }, false);
     </script>
-    <br />
 </head>
 
 <body>
-    <h1><span id="loadUserName">hello, user</span></h1>
-    <div class="main">
-        <div>
-            <button id="addBtn" class="button" onclick="addModalUp()"><i class="fa-regular fa-plus"></i></button>
-            <!-- The modal that shows the add -->
-            <div id="addModal" class="modal">
-
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-
-                    <h2>Add Contact</h2>
-                    <p>first name</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>last name</p>
-                    <input id="lastNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>phone</p>
-                    <input id="phoneInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>email</p>
-                    <input id="emailInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <button id="addButton" class="button" onclick="addContact()">add</button>
-                    <span id="contactAddResult"></span>
-                </div>
-
+    <nav id="navbar">
+        <div id="navContent">
+            <div id="navLeft">
+                <i class="fa-solid fa-user"></i>
+                <h3 id="loadUserName">welcome, user</h3>
             </div>
-            <!-- The modal that shows view -->
-            <div id="viewModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>View Contact</h2>
-                    <p>first name</p>
-                    <div id="firstNameInput" class="modalInput"></div>
-                    <p>last name</p>
-                    <div id="lastNameInput" class="modalInput">
-                    </div>
-                    <p>phone</p>
-                    <div id="phoneInput" class="modalInput">
-                    </div>
-                    <p>email</p>
-                    <div id="emailInput" class="modalInput">
-                    </div>
-                    <button id="cancelButton" class="button" onclick="addContact()">Cancel</button>
-                    <button id="doneButton" class="button" onclick="addContact()">Done</button>
-                    <button id="editButton" class="button" onclick="addContact()">Edit</button>
-                </div>
+
+            <div id="navCenter">
+                <h1>MyContacts</h1>
             </div>
-            <!-- The modal that shows edit screen -->
-            <div id="editModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>edit contact</h2>
-                    <p>first name</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>last name</p>
-                    <input id="lastNameInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>phone</p>
-                    <input id="phoneInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <p>email</p>
-                    <input id="emailInput" type="text" name="" required="" class="modalInput"
-                        onkeyup="searchOnEnterAdd()" />
-                    <button id="backButton" class="button" onclick="addContact()">Back</button>
-                    <button id="applyButton" class="button" onclick="addContact()">Apply</button>
-                </div>
+
+            <div id="navRight">
+                <button id="logoutButton" type="button" onclick="doLogout()">
+                    <h3>log out <i class="fa-solid fa-right-from-bracket"></i></h3> 
+                </button>
             </div>
-            <h2>your contacts</h2>
         </div>
-        <div class="searchContactClass" style="padding-top: 10px;">
-            <h3>search</h3>
-            <input type="text" id="searchText" placeholder="search for a contact" name="" required=""
-                onkeypress="liveSearchContacts()" />
-            <button id="searchButton" onclick="searchContact()"><i class="fa fa-search"></i></button>
+    </nav>
+
+    <div class="searchContactClass" style="padding-top: 10px;">
+        <input type="text" id="searchText" placeholder="search for a contact..." name="" required=""
+            onkeypress="liveSearchContacts()" />
+        <button id="addBtn" class="button" onclick="addModalUp()"><i class="fa-regular fa-plus"></i></button>
+    </div>
+
+    <div>
+            
+
+    <div id="addModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <h2>Add Contact</h2>
+            <p>first name</p>
+            <input id="firstNameInput" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <p>last name</p>
+            <input id="lastNameInput" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <p>phone</p>
+            <input id="phoneInput" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <p>email</p>
+            <input id="emailInput" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <button id="addButton" class="button" onclick="addContact()">add</button>
+            <span id="contactAddResult"></span>
         </div>
 
-        <div id="searchResult" class="searchResult"></div>
+    </div>
 
-        <table id="contactsTable" style="width:100%" onclick="viewModalUp()">
+    <div id="searchResult" class="searchResult"></div>
+
+        <table id="contactsTable" onclick="viewModalUp()">
             <thead>
                 <tr>
                     <th>
-                        <h3>First Name</h3>
+                        <h3>first name</h3>
                     </th>
                     <th>
-                        <h3>Last Name</h3>
+                        <h3>last name</h3>
                     </th>
                     <th>
-                        <h3>Phone Number</h3>
+                        <h3>phone number</h3>
                     </th>
                     <th>
-                        <h3>Email Address</h3>
+                        <h3>email address</h3>
                     </th>
                 </tr>
             </thead>
             <tbody id="tableBody">
-                <tr></tr>
             </tbody>
         </table>
     </div>
+
 </body>
 
 </html>
