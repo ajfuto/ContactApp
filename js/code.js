@@ -237,7 +237,14 @@ function addContact()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				document.getElementById("contactAddResult").innerHTML = "contact has been added";
+				// document.getElementById("contactAddResult").innerHTML = "contact has been added";
+
+				// clear input after adding new contact
+				document.getElementById("firstNameInput").value = "";
+				document.getElementById("lastNameInput").value = "";
+				document.getElementById("phoneInput").value = "";
+				document.getElementById("emailInput").value = "";
+
 				let addModal = document.getElementById("addModal");
 				addModal.style.opacity = "0";
 			}
@@ -275,14 +282,14 @@ function searchContact()
 	//$("#contactsTable tbody tr").remove(); 
 	try
 	{
-		console.log("inside try");
+		// console.log("inside try");
 		xhr.onreadystatechange = function() 
 		{
-			console.log("inside function");
+			// console.log("inside function");
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				console.log("inside if");
-				document.getElementById("searchResult").innerHTML = "contact(s) retrieved";
+				// console.log("inside if");
+				// document.getElementById("searchResult").innerHTML = "contact(s) retrieved";
 				let jsonObject = JSON.parse( xhr.responseText );
 				console.log(jsonObject);
 				
