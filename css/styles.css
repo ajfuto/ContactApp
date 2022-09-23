@@ -333,10 +333,10 @@ body {
     cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 10px;
+    padding: 16px 0;
     border-radius: 5px;
     color: var(--text-color);
-    font-size: 25;
+    font-size: 1rem;
 }
 
 #addBtn:hover {
