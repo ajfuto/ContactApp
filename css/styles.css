@@ -326,17 +326,17 @@ body {
 
 #addBtn
 {
-    float: right;
+    float: left;
     width: 20%;
     background: var(--button-color);
     border-left: none;
     cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 16px;
+    padding: 25px;
     border-radius: 5px;
     color: var(--text-color);
-    font-size: 19;
+    font-size: 25;
 }
 
 #addBtn:hover {
