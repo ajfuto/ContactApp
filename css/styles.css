@@ -333,7 +333,7 @@ body {
     cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 25px;
+    padding: 10px;
     border-radius: 5px;
     color: var(--text-color);
     font-size: 25;
