@@ -35,14 +35,14 @@ function searchOnEnterSearch()
 	}
 }
 
-function searchOnEnterAdd()
+/*function searchOnEnterAdd()
 {
 	if(event.keyCode == 13)
 	{
 		addContact();
 	}
 }
-
+*/
 function searchOnEnterAdd()
 {
 	if(event.keyCode == 13)
@@ -336,6 +336,8 @@ function searchContact()
 
 					cell = row.insertCell();
 					cell.innerHTML = currContact.Email;
+
+					cell.innerHTML = <button id="addBtn" class="button" onclick="editModalUp()"><i class="fa-regular fa-plus"></i></button>
 
 					// row.insertCell(jsonObjects[i]["FirstName"]);
 					// let cell = row.insertCell();
