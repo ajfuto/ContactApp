@@ -333,7 +333,8 @@ function searchContact()
 					cell.innerHTML = currContact.LastName;
 
 					cell = row.insertCell();
-					cell.innerHTML = currContact.PhoneNumber;
+					let tempNumber = currContact.PhoneNumber.replace(/[^\d]/g, "");
+					cell.innerHTML = '<a href="tel:'+tempNumber+'">'+currContact.PhoneNumber+'</a>';
 
 					cell = row.insertCell();
 					let currentEmail = currContact.Email;
@@ -359,6 +360,12 @@ function searchContact()
 		document.getElementById("searchResult").innerHTML = "dummy";
 	}
 	
+}
+
+//puts phone number back into pre masked form
+function resetNumber()
+{
+
 }
 
 /*
