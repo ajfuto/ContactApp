@@ -337,9 +337,6 @@ function searchContact()
 					cell = row.insertCell();
 					cell.innerHTML = currContact.Email;
 
-					cell = row.insertCell();
-					// cell.innerHTML = <button id="addBtn" class="button" onclick="editModalUp()"><i class="fa-regular fa-plus"></i></button>;
-
 					// row.insertCell(jsonObjects[i]["FirstName"]);
 					// let cell = row.insertCell();
 					// cell1.innerHTML = jsonObject.results[i];
