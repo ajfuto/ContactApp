@@ -291,7 +291,18 @@ body {
     text-decoration: none;
 }
 
-#tableBody a:link 
+#contactsTable a 
+{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+    color: var(--text-color);
+    text-align: center;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+#contactsTable a:link 
 {
     padding: 0;
     margin-top: 0;
@@ -303,14 +314,14 @@ body {
 }
 
 
-#tableBody a:hover 
+#contactsTable a:hover 
 {
   color: var(--button-color);
   background-color: transparent;
   text-decoration: underline;
 }
 
-#tableBody a:active 
+#contactsTable a:active 
 {
   color: var(--button-hover-color);
   background-color: transparent;
