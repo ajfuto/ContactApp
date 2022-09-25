@@ -290,14 +290,30 @@ body {
     text-align: center;
     text-decoration: none;
 }
-#contactsTable a
+
+a:link 
 {
     padding: 0;
     margin-top: 0;
     margin-bottom: 0.1rem;
     color: var(--text-color);
     text-align: center;
-    text-decoration: none;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+
+a:hover {
+  color: var(--button-color);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active 
+{
+  color: var(--button-hover-color);
+  background-color: transparent;
+  text-decoration: underline;
 }
 
 #contactsTable td
