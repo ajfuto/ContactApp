@@ -291,7 +291,7 @@ body {
     text-decoration: none;
 }
 
-#contactsTable a:link 
+#tableBody a:link 
 {
     padding: 0;
     margin-top: 0;
@@ -303,14 +303,14 @@ body {
 }
 
 
-#contactsTable a:hover 
+#tableBody a:hover 
 {
   color: var(--button-color);
   background-color: transparent;
   text-decoration: underline;
 }
 
-#contactsTable a:active 
+#tableBody a:active 
 {
   color: var(--button-hover-color);
   background-color: transparent;
