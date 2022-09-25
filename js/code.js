@@ -334,7 +334,7 @@ function searchContact()
 
 					cell = row.insertCell();
 					let tempNumber = currContact.PhoneNumber.replace(/[^\d]/g, "");
-					cell.innerHTML = '<a href="tel:'+tempNumber+'">'+currContact.PhoneNumber+'</a>';
+					cell.innerHTML = '<a href="tel:'+currContact.PhoneNumber+'">'+currContact.PhoneNumber+'</a>';
 
 					cell = row.insertCell();
 					let currentEmail = currContact.Email;
