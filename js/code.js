@@ -600,6 +600,16 @@ function revertContact()
 
 function deleteContact()
 {
-	console.log("delete contact");
-	alert("delete contact")
+	editB.textContent = "yes";
+	editB.setAttribute("onClick", "deleteHelper()");
+
+	deleteB.textContent = "no";
+	deleteB.setAttribute("onClick", "updateContact()");
+}
+function deleteHelper()
+{
+	//connect to api here
+	let addModal = document.getElementById("editModal");
+	addModal.style.opacity = "0";
+	addModal.style.pointerEvents = "none";
 }
