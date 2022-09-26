@@ -58,6 +58,21 @@ function searchOnEnterAdd()
 	  
 }
 
+function searchOnEnterEdit()
+{
+	if(event.keyCode == 13)
+	{
+		editContact();
+	}
+	//hopefully masks phone input
+	document.getElementById('viewPhone').addEventListener('input', function (e) 
+	{
+		let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+		e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+	});
+	  
+}
+
 
 
 function liveSearchContacts()
@@ -462,6 +477,7 @@ function viewModalUp(){
 		firstN.readOnly = true
 		lastN.value = tbody.rows[rowNum].cells[1].innerHTML
 		lastN.readOnly = true
+
 		phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
 		phoneN.readOnly = true
 		emailV.value = tbody.rows[rowNum].cells[3].innerHTML
