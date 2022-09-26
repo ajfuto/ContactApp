@@ -460,7 +460,7 @@ function viewModalUp(){
 		const cell = e.target.closest('td');
 		if(!cell) {return;} //not a row
 		const row  = cell.parentElement;
-		let rowNum = row.rowIndex
+		let rowNum = row.rowIndex - 1
 		console.log(row.rowIndex);
 		editModalUp();
 
