@@ -302,7 +302,7 @@ body {
     text-decoration: underline;
 }
 
-#contactsTable a:link 
+#emailTable:link 
 {
     padding: 0;
     margin-top: 0;
@@ -314,14 +314,14 @@ body {
 }
 
 
-#contactsTable a:hover 
+#emailTable:hover 
 {
   color: var(--button-color);
   background-color: transparent;
   text-decoration: underline;
 }
 
-#contactsTable a:active 
+#emailTable:active 
 {
   color: var(--button-hover-color);
   background-color: transparent;

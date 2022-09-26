@@ -333,12 +333,14 @@ function searchContact()
 					cell.innerHTML = currContact.LastName;
 
 					cell = row.insertCell();
-					cell.innerHTML = '<a href="tel:'+currContact.PhoneNumber+'">'+currContact.PhoneNumber+'</a>';
+					cell.innerHTML = '<a href="tel:'+currContact.PhoneNumber+' id="emailTable"">'+currContact.PhoneNumber+'</a>';
 
 					cell = row.insertCell();
 					let currentEmail = currContact.Email;
-					cell.innerHTML = '<a href="mailto:'+currentEmail+'">'+currentEmail+'</a>';
+					cell.innerHTML = '<a href="mailto:'+currentEmail+' id="emailTable">'+currentEmail+'</a>';
 
+					cell = row.insertCell();
+					cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
 					// row.insertCell(jsonObjects[i]["FirstName"]);
 					// let cell = row.insertCell();
 					// cell1.innerHTML = jsonObject.results[i];
@@ -453,3 +455,36 @@ function viewModalUp(){
 	
 
 }
+
+
+function editModalUp()
+{
+	// Get the modal
+	let addModal = document.getElementById("editModal");
+
+	// Get the button that opens the modal
+	let editBtn = document.getElementById("editBtn");
+
+	let addSpan = document.getElementsByClassName("close")[1];
+	// When the user clicks the button, open the modal 
+	addModal.style.opacity = "1";
+	addModal.style.pointerEvents = "all";
+
+	// When the user clicks on <span> (x), close the modal
+	addSpan.onclick = function() 
+	{
+		addModal.style.opacity = "0";
+		addModal.style.pointerEvents = "none";
+
+	}
+	window.onclick = function(event) 
+	{
+		if (event.target == addModal) 
+		{
+			addModal.style.opacity = "0";
+			addModal.style.pointerEvents = "none";
+
+		}
+	}
+}
+
