@@ -524,7 +524,7 @@ function editContact()
 	let emailV = document.getElementById("viewEmail");
 
 	let saveB = document.getElementById("editBtn");
-	let cancelB = document.getElementById("viewEmail");
+	let cancelB = document.getElementById("deleteBtn");
 
 	//let oldfirstN = tbody.rows[rowNum].cells[0].innerHTML
 	firstN.readOnly = false;
