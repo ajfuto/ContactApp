@@ -386,12 +386,11 @@ body {
 {
     float: left;
     width: 40%;
-    background: var(--button-color);
-    border-left: none;
-    cursor: pointer;
     outline: 0;
+    background: var(--button-color);
+    width: 100%;
     border: 0;
-    padding: 16px 0;
+    padding: 20px;
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;

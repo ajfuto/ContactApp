@@ -526,9 +526,9 @@ function editContact()
 	let saveB = document.getElementById("editBtn");
 	let cancelB = document.getElementById("viewEmail");
 
-	let oldfirstN = tbody.rows[rowNum].cells[0].innerHTML
+	//let oldfirstN = tbody.rows[rowNum].cells[0].innerHTML
 	firstN.readOnly = false
-	let oldLastN = tbody.rows[rowNum].cells[1].innerHTML
+	//let oldLastN = tbody.rows[rowNum].cells[1].innerHTML
 	lastN.readOnly = false
 	//phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
 	phoneN.readOnly = false
@@ -538,8 +538,8 @@ function editContact()
 	saveB.value = "save"
 	saveB.setAttribute("onClick", "updateContact()");
 
-	saveB.value = "cancel"
-	saveB.setAttribute("onClick", "revertContact()");
+	cancelB.value = "cancel"
+	cancelB.setAttribute("onClick", "revertContact()");
 }
 
 function updateContact()
