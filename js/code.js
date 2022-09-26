@@ -601,4 +601,5 @@ function revertContact()
 function deleteContact()
 {
 	console.log("delete contact");
+	alert("delete contact")
 }
