@@ -458,9 +458,9 @@ function viewModalUp(){
 		let phoneN = document.getElementById("viewPhone");
 		let emailV = document.getElementById("viewEmail");
 
-		firstN.value = tbody.rows[rowNum].cells[i].innerHTML
+		firstN.value = tbody.rows[rowNum].cells[0].innerHTML
 		firstN.readOnly = true
-		lastN.value = tbody.rows[rowNum].cells[i].innerHTML
+		lastN.value = tbody.rows[rowNum].cells[1].innerHTML
 	});
 
 	
