@@ -473,7 +473,6 @@ function viewModalUp(){
 		firstN.readOnly = true;
 		lastN.value = tbody.rows[rowNum].cells[1].innerHTML;
 		lastN.readOnly = true;
-
 		phoneN.value = tbody.rows[rowNum].cells[2].innerHTML;
 		phoneN.readOnly = true;
 		emailV.value = tbody.rows[rowNum].cells[3].innerHTML;
@@ -562,10 +561,10 @@ function updateContact()
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
 
-	editB.value = "save";
+	editB.value = "edit";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "cancel";
+	deleteB.value = "delete";
 	deleteB.setAttribute("onClick", "");
 
 }
@@ -587,9 +586,12 @@ function revertContact()
 	emailV.value = tbody.rows[rowNum].cells[3].innerHTML;
 	emailV.readOnly = true;
 
-	editB.value = "save";
+	let editB = document.getElementById("editBtn");
+	let deleteB = document.getElementById("deleteBtn");
+
+	editB.value = "edit";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "cancel";
+	deleteB.value = "delete";
 	deleteB.setAttribute("onClick", "");
 }
