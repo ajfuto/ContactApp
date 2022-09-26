@@ -348,11 +348,11 @@ function searchContact()
 					cell.innerHTML = currContact.LastName;
 
 					cell = row.insertCell();
-					cell.innerHTML = '<a href="tel:'+currContact.PhoneNumber+' id="emailTable"">'+currContact.PhoneNumber+'</a>';
+					cell.innerHTML = '<a href="tel:'+currContact.PhoneNumber+'"id="emailTable">'+currContact.PhoneNumber+'</a>';
 
 					cell = row.insertCell();
 					let currentEmail = currContact.Email;
-					cell.innerHTML = '<a href="mailto:'+currentEmail+' id="emailTable">'+currentEmail+'</a>';
+					cell.innerHTML = '<a href="mailto:'+currentEmail+'" id="emailTable">'+currentEmail+'</a>';
 
 					//cell = row.insertCell();
 					//cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
