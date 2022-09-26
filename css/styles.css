@@ -381,3 +381,45 @@ body {
     transition: 0.25s;
     cursor: pointer;
 }
+
+#editBtn
+{
+    float: left;
+    width: 20%;
+    background: var(--button-color);
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 16px 0;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#editBtn:hover {
+    background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+#editBtn
+{
+    float: right;
+    width: 20%;
+    background: #D7263D;
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 16px 0;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#editBtn:hover {
+    background: #ec324b;
+    transition: 0.25s;
+    cursor: pointer;
+}
