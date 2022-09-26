@@ -475,9 +475,9 @@ function viewModalUp(){
 		firstN.readOnly = true;
 		lastN.value = tbody.rows[rowNum].cells[1].innerHTML;
 		lastN.readOnly = true;
-		phoneN.value = tbody.rows[rowNum].cells[2].innerHTML;
+		phoneN.value = tbody.rows[rowNum].cells[2].innerHTML.value;
 		phoneN.readOnly = true;
-		emailV.value = tbody.rows[rowNum].cells[3].innerHTML;
+		emailV.value = tbody.rows[rowNum].cells[3].innerHTML.value;
 		emailV.readOnly = true;
 	});
 
