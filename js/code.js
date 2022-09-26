@@ -504,3 +504,20 @@ function editModalUp()
 	}
 }
 
+function editContact()
+{
+	let firstN = document.getElementById("viewFirstName");
+	let lastN = document.getElementById("viewLastName");
+	let phoneN = document.getElementById("viewPhone");
+	let emailV = document.getElementById("viewEmail");
+
+	//firstN.value = tbody.rows[rowNum].cells[0].innerHTML
+	firstN.readOnly = false
+	//lastN.value = tbody.rows[rowNum].cells[1].innerHTML
+	lastN.readOnly = false
+	//phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
+	phoneN.readOnly = false
+	//emailV.value = tbody.rows[rowNum].cells[3].innerHTML
+	emailV.readOnly = false
+}
+
