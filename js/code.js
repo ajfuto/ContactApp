@@ -534,10 +534,10 @@ function editContact()
 	//emailV.value = tbody.rows[rowNum].cells[3].innerHTML
 	emailV.readOnly = false;
 
-	saveB.value = "save";
+	saveB.textContent = "save";
 	saveB.setAttribute("onClick", "updateContact()");
 
-	cancelB.value = "cancel";
+	cancelB.textContent = "cancel";
 	cancelB.setAttribute("onClick", "revertContact()");
 }
 
@@ -561,10 +561,10 @@ function updateContact()
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
 
-	editB.value = "edit";
+	editB.textContent = "edit";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "delete";
+	deleteB.textContent = "delete";
 	deleteB.setAttribute("onClick", "deleteContact()");
 
 }
@@ -589,14 +589,14 @@ function revertContact()
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
 
-	editB.value = "edit";
+	editB.textContent = "edit";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "delete";
+	deleteB.textContent = "delete";
 	deleteB.setAttribute("onClick", "deleteContact()");
 }
 
 function deleteContact()
 {
-	constole.log("delete contact")
+	console.log("delete contact");
 }
