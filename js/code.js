@@ -339,8 +339,8 @@ function searchContact()
 					let currentEmail = currContact.Email;
 					cell.innerHTML = '<a href="mailto:'+currentEmail+' id="emailTable">'+currentEmail+'</a>';
 
-					cell = row.insertCell();
-					cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
+					//cell = row.insertCell();
+					//cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
 					// row.insertCell(jsonObjects[i]["FirstName"]);
 					// let cell = row.insertCell();
 					// cell1.innerHTML = jsonObject.results[i];
@@ -449,7 +449,18 @@ function viewModalUp(){
 		const cell = e.target.closest('td');
 		if(!cell) {return;} //not a row
 		const row  = cell.parentElement;
+		let rowNum = row.rowIndex
 		console.log(row.rowIndex);
+		editModalUp();
+
+		let firstN = document.getElementById("viewFirstName");
+		let lastN = document.getElementById("viewLastName");
+		let phoneN = document.getElementById("viewPhone");
+		let emailV = document.getElementById("viewEmail");
+
+		firstN.value = tbody.rows[rowNum].cells[i].innerHTML
+		firstN.readOnly = true
+		lastN.value = tbody.rows[rowNum].cells[i].innerHTML
 	});
 
 	
