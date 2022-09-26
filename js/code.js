@@ -560,7 +560,7 @@ function updateContact()
 	emailV.readOnly = true;
 
 	let editB = document.getElementById("editBtn");
-	let deleteB = document.getElementById("viewEmail");
+	let deleteB = document.getElementById("deleteBtn");
 
 	editB.value = "edit";
 	editB.setAttribute("onClick", "editContact()");
@@ -575,7 +575,7 @@ function revertContact()
 	let firstN = document.getElementById("viewFirstName");
 	let lastN = document.getElementById("viewLastName");
 	let phoneN = document.getElementById("viewPhone");
-	let emailV = document.getElementById("viewEmail");
+	let emailV = document.getElementById("deleteBtn");
 
 	firstN.value = tbody.rows[rowNum].cells[0].innerHTML;
 	firstN.readOnly = true;
