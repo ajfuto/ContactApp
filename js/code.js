@@ -562,10 +562,10 @@ function updateContact()
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
 
-	editB.value = "edit";
+	editB.value = "save";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "delete";
+	deleteB.value = "cancel";
 	deleteB.setAttribute("onClick", "");
 
 }
