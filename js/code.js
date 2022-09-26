@@ -9,6 +9,8 @@ let userId = 0;
 let firstName = "";
 let lastName = "";
 
+let rowNum = -1;
+
 function searchOnEnterReg()
 {
 	if(event.keyCode == 13)
@@ -460,7 +462,7 @@ function viewModalUp(){
 		const cell = e.target.closest('td');
 		if(!cell) {return;} //not a row
 		const row  = cell.parentElement;
-		let rowNum = row.rowIndex - 1
+		rowNum = row.rowIndex - 1;
 		console.log(row.rowIndex);
 		editModalUp();
 
