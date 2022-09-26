@@ -587,9 +587,9 @@ function revertContact()
 	emailV.value = tbody.rows[rowNum].cells[3].innerHTML;
 	emailV.readOnly = true;
 
-	editB.value = "edit";
+	editB.value = "save";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "delete";
+	deleteB.value = "cancel";
 	deleteB.setAttribute("onClick", "");
 }
