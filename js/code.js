@@ -469,15 +469,15 @@ function viewModalUp(){
 		let phoneN = document.getElementById("viewPhone");
 		let emailV = document.getElementById("viewEmail");
 
-		firstN.value = tbody.rows[rowNum].cells[0].innerHTML
-		firstN.readOnly = true
-		lastN.value = tbody.rows[rowNum].cells[1].innerHTML
-		lastN.readOnly = true
+		firstN.value = tbody.rows[rowNum].cells[0].innerHTML;
+		firstN.readOnly = true;
+		lastN.value = tbody.rows[rowNum].cells[1].innerHTML;
+		lastN.readOnly = true;
 
-		phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
-		phoneN.readOnly = true
-		emailV.value = tbody.rows[rowNum].cells[3].innerHTML
-		emailV.readOnly = true
+		phoneN.value = tbody.rows[rowNum].cells[2].innerHTML;
+		phoneN.readOnly = true;
+		emailV.value = tbody.rows[rowNum].cells[3].innerHTML;
+		emailV.readOnly = true;
 	});
 
 	
@@ -527,18 +527,18 @@ function editContact()
 	let cancelB = document.getElementById("viewEmail");
 
 	//let oldfirstN = tbody.rows[rowNum].cells[0].innerHTML
-	firstN.readOnly = false
+	firstN.readOnly = false;
 	//let oldLastN = tbody.rows[rowNum].cells[1].innerHTML
-	lastN.readOnly = false
+	lastN.readOnly = false;
 	//phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
-	phoneN.readOnly = false
+	phoneN.readOnly = false;
 	//emailV.value = tbody.rows[rowNum].cells[3].innerHTML
-	emailV.readOnly = false
+	emailV.readOnly = false;
 
-	saveB.value = "save"
+	saveB.value = "save";
 	saveB.setAttribute("onClick", "updateContact()");
 
-	cancelB.value = "cancel"
+	cancelB.value = "cancel";
 	cancelB.setAttribute("onClick", "revertContact()");
 }
 
@@ -551,21 +551,21 @@ function updateContact()
 
 	console.log("updateContact Clicked");
 
-	firstN.readOnly = true
+	firstN.readOnly = true;
 
-	lastN.readOnly = true
+	lastN.readOnly = true;
 
-	phoneN.readOnly = true
+	phoneN.readOnly = true;
 
-	emailV.readOnly = true
+	emailV.readOnly = true;
 
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("viewEmail");
 
-	editB.value = "edit"
+	editB.value = "edit";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "delete"
+	deleteB.value = "delete";
 	deleteB.setAttribute("onClick", "");
 
 }
@@ -577,19 +577,19 @@ function revertContact()
 	let phoneN = document.getElementById("viewPhone");
 	let emailV = document.getElementById("viewEmail");
 
-	firstN.value = tbody.rows[rowNum].cells[0].innerHTML
-	firstN.readOnly = true
-	lastN.value = tbody.rows[rowNum].cells[1].innerHTML
-	lastN.readOnly = true
+	firstN.value = tbody.rows[rowNum].cells[0].innerHTML;
+	firstN.readOnly = true;
+	lastN.value = tbody.rows[rowNum].cells[1].innerHTML;
+	lastN.readOnly = true;
 
-	phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
-	phoneN.readOnly = true
-	emailV.value = tbody.rows[rowNum].cells[3].innerHTML
-	emailV.readOnly = true
+	phoneN.value = tbody.rows[rowNum].cells[2].innerHTML;
+	phoneN.readOnly = true;
+	emailV.value = tbody.rows[rowNum].cells[3].innerHTML;
+	emailV.readOnly = true;
 
-	editB.value = "edit"
+	editB.value = "edit";
 	editB.setAttribute("onClick", "editContact()");
 
-	deleteB.value = "delete"
+	deleteB.value = "delete";
 	deleteB.setAttribute("onClick", "");
 }
