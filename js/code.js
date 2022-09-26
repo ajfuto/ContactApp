@@ -378,11 +378,7 @@ function searchContact()
 	
 }
 
-//puts phone number back into pre masked form
-function resetNumber()
-{
 
-}
 
 /*
 function searchModalUp()
@@ -527,13 +523,73 @@ function editContact()
 	let phoneN = document.getElementById("viewPhone");
 	let emailV = document.getElementById("viewEmail");
 
-	//firstN.value = tbody.rows[rowNum].cells[0].innerHTML
+	let saveB = document.getElementById("editBtn");
+	let cancelB = document.getElementById("viewEmail");
+
+	let oldfirstN = tbody.rows[rowNum].cells[0].innerHTML
 	firstN.readOnly = false
-	//lastN.value = tbody.rows[rowNum].cells[1].innerHTML
+	let oldLastN = tbody.rows[rowNum].cells[1].innerHTML
 	lastN.readOnly = false
 	//phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
 	phoneN.readOnly = false
 	//emailV.value = tbody.rows[rowNum].cells[3].innerHTML
 	emailV.readOnly = false
+
+	saveB.value = "save"
+	saveB.setAttribute("onClick", "updateContact()");
+
+	saveB.value = "cancel"
+	saveB.setAttribute("onClick", "revertContact()");
 }
 
+function updateContact()
+{
+	let firstN = document.getElementById("viewFirstName");
+	let lastN = document.getElementById("viewLastName");
+	let phoneN = document.getElementById("viewPhone");
+	let emailV = document.getElementById("viewEmail");
+
+	console.log("updateContact Clicked");
+
+	firstN.readOnly = true
+
+	lastN.readOnly = true
+
+	phoneN.readOnly = true
+
+	emailV.readOnly = true
+
+	let editB = document.getElementById("editBtn");
+	let deleteB = document.getElementById("viewEmail");
+
+	editB.value = "edit"
+	editB.setAttribute("onClick", "editContact()");
+
+	deleteB.value = "delete"
+	deleteB.setAttribute("onClick", "");
+
+}
+
+function revertContact()
+{
+	let firstN = document.getElementById("viewFirstName");
+	let lastN = document.getElementById("viewLastName");
+	let phoneN = document.getElementById("viewPhone");
+	let emailV = document.getElementById("viewEmail");
+
+	firstN.value = tbody.rows[rowNum].cells[0].innerHTML
+	firstN.readOnly = true
+	lastN.value = tbody.rows[rowNum].cells[1].innerHTML
+	lastN.readOnly = true
+
+	phoneN.value = tbody.rows[rowNum].cells[2].innerHTML
+	phoneN.readOnly = true
+	emailV.value = tbody.rows[rowNum].cells[3].innerHTML
+	emailV.readOnly = true
+
+	editB.value = "edit"
+	editB.setAttribute("onClick", "editContact()");
+
+	deleteB.value = "delete"
+	deleteB.setAttribute("onClick", "");
+}

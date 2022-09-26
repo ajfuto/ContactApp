@@ -382,7 +382,7 @@ body {
     cursor: pointer;
 }
 
-#editButton
+.editButton
 {
     float: left;
     width: 40%;
@@ -397,13 +397,13 @@ body {
     font-size: 1rem;
 }
 
-#editButton:hover {
+.editButton:hover {
     background: var(--button-hover-color);
     transition: 0.25s;
     cursor: pointer;
 }
 
-#deleteButton
+.deleteButton
 {
     float: right;
     width: 40%;
@@ -418,7 +418,7 @@ body {
     font-size: 1rem;
 }
 
-#deleteButton:hover {
+.deleteButton:hover {
     background: #ec324b;
     transition: 0.25s;
     cursor: pointer;
