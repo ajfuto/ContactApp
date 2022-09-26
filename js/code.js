@@ -565,7 +565,7 @@ function updateContact()
 	editB.setAttribute("onClick", "editContact()");
 
 	deleteB.value = "delete";
-	deleteB.setAttribute("onClick", "");
+	deleteB.setAttribute("onClick", "deleteContact()");
 
 }
 
@@ -593,5 +593,10 @@ function revertContact()
 	editB.setAttribute("onClick", "editContact()");
 
 	deleteB.value = "delete";
-	deleteB.setAttribute("onClick", "");
+	deleteB.setAttribute("onClick", "deleteContact()");
+}
+
+function deleteContact()
+{
+	constole.log("delete contact")
 }
