@@ -413,7 +413,7 @@ function searchContact()
 
 function loadMore()
 {
-	amountLoaded += 5;
+	amountLoaded += 15;
 	lazyLoad();
 	console.log(amountLoaded);
 }
