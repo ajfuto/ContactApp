@@ -286,6 +286,7 @@ function addContact()
 			}
 		};
 		xhr.send(jsonPayload);
+		searchContact();
 	}
 	catch(err)
 	{
@@ -428,7 +429,7 @@ function lazyLoad()
 
 				let j = 0
 				// let row;
-				for( let i=0; i<2; i++ ) //just testing if this will work
+				for( let i=0; i<15; i++ )
 				{
 					let row = table.insertRow();
 					let currContact = jsonObject.results[i]
