@@ -407,6 +407,14 @@ function searchContact()
 	
 }
 
+function loadMore()
+{
+	amountLoaded += 5;
+	lazyLoad();
+	console.log(amountLoaded);
+}
+
+
 function lazyLoad()
 {
 	let srch = document.getElementById("searchText").value;
@@ -496,12 +504,6 @@ function lazyLoad()
 	}
 }
 
-function loadMore()
-{
-	amountLoaded += 5;
-	lazyLoad();
-	console.log(amountLoaded);
-}
 
 
 
