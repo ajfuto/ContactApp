@@ -314,6 +314,7 @@ function searchContact()
 
 	if(srch == "")
 	{
+		amountLoaded = 10;
 		lazyLoad();
 		return;
 	}
