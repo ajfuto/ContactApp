@@ -559,9 +559,10 @@ body {
 
 #loadMoreButton
 {
+    float: center;
     outline: 0;
     background: var(--button-color);
-    width: 50%;
+    width: 20%;
     border: 0;
     padding: 20px;
     border-radius: 5px;
