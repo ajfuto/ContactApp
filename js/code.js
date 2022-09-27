@@ -12,7 +12,7 @@ let lastName = "";
 
 let rowNum = -1;
 
-let amountLoaded = 5;
+let amountLoaded = 15;
 
 function searchOnEnterReg()
 {
