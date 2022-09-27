@@ -519,6 +519,7 @@ function editModalUp()
 	{
 		addModal.style.opacity = "0";
 		addModal.style.pointerEvents = "none";
+		resetButtons()
 
 	}
 	window.onclick = function(event) 
@@ -527,6 +528,7 @@ function editModalUp()
 		{
 			addModal.style.opacity = "0";
 			addModal.style.pointerEvents = "none";
+			resetButtons()
 
 		}
 	}
@@ -575,15 +577,7 @@ function updateContact()
 
 	emailV.readOnly = true;
 
-	let editB = document.getElementById("editBtn");
-	let deleteB = document.getElementById("deleteBtn");
-
-	editB.textContent = "edit";
-	editB.setAttribute("onClick", "editContact()");
-
-	deleteB.textContent = "delete";
-	deleteB.setAttribute("onClick", "deleteContact()");
-
+	resetButtons()
 }
 
 function revertContact()
@@ -655,4 +649,16 @@ function deleteHelper()
 	{
 		document.getElementById("deleteResult").innerHTML = err.message;
 	}
+}
+
+function resetButtons()
+{
+	let editB = document.getElementById("editBtn");
+	let deleteB = document.getElementById("deleteBtn");
+
+	editB.textContent = "edit";
+	editB.setAttribute("onClick", "editContact()");
+
+	deleteB.textContent = "delete";
+	deleteB.setAttribute("onClick", "deleteContact()");
 }
