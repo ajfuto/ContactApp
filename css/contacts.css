@@ -522,11 +522,9 @@ body {
     float: right;
     width: 40%;
     background: #D7263D;
-    border-left: none;
-    cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 16px 0;
+    padding: 20px;
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;

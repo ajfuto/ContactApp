@@ -553,6 +553,9 @@ function editContact()
 	//emailV.value = tbody.rows[rowNum].cells[3].innerHTML
 	emailV.readOnly = false;
 
+	let ays = document.getElementById("areYouSure");
+	ays.value = "";
+
 	saveB.textContent = "save";
 	saveB.setAttribute("onClick", "updateContact()");
 
@@ -599,20 +602,16 @@ function revertContact()
 	emailV.value = tbody.rows[rowNum].cells[3].textContent;
 	emailV.readOnly = true;
 
-	let editB = document.getElementById("editBtn");
-	let deleteB = document.getElementById("deleteBtn");
-
-	editB.textContent = "edit";
-	editB.setAttribute("onClick", "editContact()");
-
-	deleteB.textContent = "delete";
-	deleteB.setAttribute("onClick", "deleteContact()");
+	resetButtons();
 }
 
 function deleteContact(contactID)
 {
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
+	let ays = document.getElementById("areYouSure");
+
+	ays.value = "are you sure?";
 
 	editB.textContent = "yes";
 	editB.setAttribute("onClick", "deleteHelper()");
@@ -655,10 +654,12 @@ function resetButtons()
 {
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
+	let ays = document.getElementById("areYouSure");
 
 	editB.textContent = "edit";
 	editB.setAttribute("onClick", "editContact()");
 
 	deleteB.textContent = "delete";
 	deleteB.setAttribute("onClick", "deleteContact()");
+	ays.value = "";
 }
