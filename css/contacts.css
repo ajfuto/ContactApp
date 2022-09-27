@@ -559,6 +559,8 @@ body {
 
 #loadMoreButton
 {
+    float: center;
+    text-align: center;
     outline: 0;
     background: var(--button-color);
     width: 15%;
@@ -574,11 +576,3 @@ body {
     transition: 0.25s;
     cursor: pointer;
 }
-
-.vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
