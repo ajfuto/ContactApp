@@ -579,6 +579,8 @@ function revertContact()
 	let phoneN = document.getElementById("viewPhone");
 	let emailV = document.getElementById("viewEmail");
 
+	let tbody = document.querySelector("#tableBody");
+
 	firstN.value = tbody.rows[rowNum].cells[0].innerHTML;
 	firstN.readOnly = true;
 	lastN.value = tbody.rows[rowNum].cells[1].innerHTML;
