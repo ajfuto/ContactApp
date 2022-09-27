@@ -390,7 +390,7 @@ body {
 {
     margin: auto;
     margin-top: 2rem;
-    width: 90%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -409,7 +409,7 @@ body {
 }
 
 .searchContactClass input {
-    width: 80%;
+    width: 90%;
     float: left;
     padding: 16px 0;
     color: var(--text-color);
