@@ -778,6 +778,7 @@ function deleteHelper()
 	{
 		xhr.send(jsonPayload);
 		searchContact();
+		resetButtons();
 	}
 	catch(err)
 	{
