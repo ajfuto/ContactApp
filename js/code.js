@@ -307,7 +307,6 @@ function searchContact()
 
 	let table = document.getElementById("tableBody");
 	let tBody = document.getElementById("tableBody");
-	tBody.innerHTML = "";
 	
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -328,6 +327,8 @@ function searchContact()
 				let jsonObject = JSON.parse( xhr.responseText );
 				console.log(jsonObject);
 				
+				tBody.innerHTML = '';
+
 				let j = 0
 				// let row;
 				for( let i=0; i<jsonObject.results.length; i++ )
