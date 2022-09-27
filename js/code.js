@@ -614,10 +614,30 @@ function deleteContact()
 }
 function deleteHelper()
 {
-	//connect to api here
+	let firstN = document.getElementById("viewFirstName");
+	let lastN = document.getElementById("viewLastName");
+	let phoneN = document.getElementById("viewPhone");
+	let emailV = document.getElementById("viewEmail");
+
+
 	let addModal = document.getElementById("editModal");
 	addModal.style.opacity = "0";
 	addModal.style.pointerEvents = "none";
 
-	
+	let tmp = {userId:userId,firstName:firstN.value,lastName:lastN.value,email:emailV.value,phoneNumber:phoneN.value};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/DeleteContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("deleteResult").innerHTML = err.message;
+	}
 }
