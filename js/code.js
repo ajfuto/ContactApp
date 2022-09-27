@@ -357,6 +357,12 @@ function searchContact()
 					let currentEmail = currContact.Email;
 					cell.innerHTML = '<a href="mailto:'+currentEmail+'" id="emailTable">'+currentEmail+'</a>';
 
+					// hidden contact ID
+					// cell = row.insertCell();
+					// cell.style.display = "none";
+					// let currentContId = currContact.ContactID
+					// cell.innerHTML = currentContId;
+
 					//cell = row.insertCell();
 					//cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
 					// row.insertCell(jsonObjects[i]["FirstName"]);
@@ -465,7 +471,15 @@ function viewModalUp(){
 		const row  = cell.parentElement;
 		rowNum = row.rowIndex - 1;
 		console.log(row.rowIndex);
+
+		// let contactID = tbody.rows[rowNum].cells[4].innerHTML;
+		// console.log("contactID:" + contactID);
+		// document.getElementById('deleteBtn').setAttribute("onClick", `deleteContact(${contactID})`)
+
 		editModalUp();
+
+		
+
 
 		let firstN = document.getElementById("viewFirstName");
 		let lastN = document.getElementById("viewLastName");
@@ -601,7 +615,7 @@ function revertContact()
 	deleteB.setAttribute("onClick", "deleteContact()");
 }
 
-function deleteContact()
+function deleteContact(contactID)
 {
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
@@ -624,7 +638,7 @@ function deleteHelper()
 	addModal.style.opacity = "0";
 	addModal.style.pointerEvents = "none";
 
-	let tmp = {userId:userId,firstName:firstN.value,lastName:lastN.value,email:emailV.value,phoneNumber:phoneN.value};
+	let tmp = {UserID:userId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/DeleteContact.' + extension;
@@ -635,6 +649,7 @@ function deleteHelper()
 	try
 	{
 		xhr.send(jsonPayload);
+		searchContact();
 	}
 	catch(err)
 	{
