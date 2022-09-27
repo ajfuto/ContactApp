@@ -560,12 +560,20 @@ body {
 #loadMoreButton
 {
     float: center;
-    outline: 0;
-    background: var(--button-color);
     width: 15%;
+    background: var(--button-color);
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
     border: 0;
-    padding: 20px;
+    padding: 16px;
     border-radius: 5px;
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 19;
+}
+
+#loadMoreButton:hover {
+    background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
 }
