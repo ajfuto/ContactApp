@@ -557,11 +557,14 @@ body {
     text-align: center;
 }
 
-#loadMore
+#loadMoreButton
 {
+    outline: 0;
+    background: var(--button-color);
+    width: 50%;
+    border: 0;
+    padding: 20px;
+    border-radius: 5px;
     color: var(--text-color);
-    text-decoration:underline;
-    font-size: 1.5rem;
-    background:none; 
-    border:none;
+    font-size: 1rem;
 }

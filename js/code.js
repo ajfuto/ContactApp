@@ -318,6 +318,9 @@ function searchContact()
 		return;
 	}
 
+	let loadMoreButton = document.getElementById("loadMoreButton");
+	loadMoreButton.hidden = false;
+
 	console.log(srch);
 
 	let tmp = {search:srch,userId:userId};
@@ -421,6 +424,9 @@ function lazyLoad()
 	let tmp = {search:srch,userId:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
+	let loadMoreButton = document.getElementById("loadMoreButton");
+	loadMoreButton.hidden = false;
+
 	let url = urlBase + '/SearchContacts.' + extension;
 
 	let table = document.getElementById("tableBody");
@@ -448,6 +454,13 @@ function lazyLoad()
 				tBody.innerHTML = '';
 
 				let j = 0
+
+				if(amountLoaded >= jsonObject.results.length)
+				{
+					amountLoaded = jsonObject.results.length;
+					loadMoreButton.hidden = true;
+				}
+
 				// let row;
 				for( let i=0; i<amountLoaded; i++ )
 				{
