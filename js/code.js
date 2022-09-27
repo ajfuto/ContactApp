@@ -425,7 +425,6 @@ function lazyLoad()
 	let jsonPayload = JSON.stringify( tmp );
 
 	let loadMoreButton = document.getElementById("loadMoreButton");
-	loadMoreButton.hidden = false;
 
 	let url = urlBase + '/SearchContacts.' + extension;
 
@@ -459,6 +458,10 @@ function lazyLoad()
 				{
 					amountLoaded = jsonObject.results.length;
 					loadMoreButton.hidden = true;
+				}
+				else
+				{
+					loadMoreButton.hidden = false;
 				}
 
 				// let row;
