@@ -586,9 +586,9 @@ function revertContact()
 	lastN.value = tbody.rows[rowNum].cells[1].innerHTML;
 	lastN.readOnly = true;
 
-	phoneN.value = tbody.rows[rowNum].cells[2].innerHTML;
+	phoneN.value = tbody.rows[rowNum].cells[2].textContent;
 	phoneN.readOnly = true;
-	emailV.value = tbody.rows[rowNum].cells[3].innerHTML;
+	emailV.value = tbody.rows[rowNum].cells[3].textContent;
 	emailV.readOnly = true;
 
 	let editB = document.getElementById("editBtn");
@@ -603,7 +603,9 @@ function revertContact()
 
 function deleteContact()
 {
-	console.log("delete")
+	let editB = document.getElementById("editBtn");
+	let deleteB = document.getElementById("deleteBtn");
+	
 	editB.textContent = "yes";
 	editB.setAttribute("onClick", "deleteHelper()");
 
