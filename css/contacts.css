@@ -557,10 +557,15 @@ body {
     text-align: center;
 }
 
+.loadClass
+{
+    text-align: center;
+}
+
 #loadMoreButton
 {
     float: center;
-    text-align: center;
+    
     left: 50%;
     outline: 0;
     background: var(--button-color);
