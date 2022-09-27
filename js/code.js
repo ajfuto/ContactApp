@@ -298,6 +298,12 @@ function searchContact()
 	console.log("search triggered");
 	let srch = document.getElementById("searchText").value;
 
+	if(srch == "")
+	{
+		lazyLoad();
+		return;
+	}
+
 	console.log(srch);
 
 	let tmp = {search:srch,userId:userId};
@@ -385,6 +391,95 @@ function searchContact()
 		document.getElementById("searchResult").innerHTML = "dummy";
 	}
 	
+}
+
+function lazyLoad()
+{
+	let srch = document.getElementById("searchText").value;
+	let tmp = {search:srch,userId:userId};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/SearchContacts.' + extension;
+
+	let table = document.getElementById("tableBody");
+	let tBody = document.getElementById("tableBody");
+	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	console.log("request header set");
+
+	//$("#contactsTable tbody tr").remove(); 
+	try
+	{
+		// console.log("inside try");
+		xhr.onreadystatechange = function() 
+		{
+			// console.log("inside function");
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				// console.log("inside if");
+				// document.getElementById("searchResult").innerHTML = "contact(s) retrieved";
+				let jsonObject = JSON.parse( xhr.responseText );
+				console.log(jsonObject);
+				
+				tBody.innerHTML = '';
+
+				let j = 0
+				// let row;
+				for( let i=0; i<2; i++ ) //just testing if this will work
+				{
+					let row = table.insertRow();
+					let currContact = jsonObject.results[i]
+					console.log(currContact);
+					// if(i%4==0)
+					// {
+					// 	j++;
+					// 	row = table.insertRow(j);
+					// }
+
+					// console.log(jsonObject[i]);
+					console.log(currContact.FirstName);
+					let cell = row.insertCell();
+					cell.innerHTML = currContact.FirstName;
+
+					cell = row.insertCell();
+					cell.innerHTML = currContact.LastName;
+
+					cell = row.insertCell();
+					cell.innerHTML = '<a href="tel:'+currContact.PhoneNumber+'"id="emailTable">'+currContact.PhoneNumber+'</a>';
+
+					cell = row.insertCell();
+					let currentEmail = currContact.Email;
+					cell.innerHTML = '<a href="mailto:'+currentEmail+'" id="emailTable">'+currentEmail+'</a>';
+
+					// hidden contact ID
+					// cell = row.insertCell();
+					// cell.style.display = "none";
+					// let currentContId = currContact.ContactID
+					// cell.innerHTML = currentContId;
+
+					//cell = row.insertCell();
+					//cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
+					// row.insertCell(jsonObjects[i]["FirstName"]);
+					// let cell = row.insertCell();
+					// cell1.innerHTML = jsonObject.results[i];
+				}
+			}
+			else
+			{
+				console.log("state" + this.readyState)
+				console.log("status " + this.status)
+			}
+		};
+		console.log(jsonPayload);
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		console.log('this is broken');
+		document.getElementById("searchResult").innerHTML = "dummy";
+	}
 }
 
 
