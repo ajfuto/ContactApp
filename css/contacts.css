@@ -212,11 +212,11 @@ body {
   }
 
 #addBtn {
-    /*width: 10%;*/
+    width: 10%;
     outline: 0;
     background: var(--button-color);
-    height: 16px;
-    width: 16px;
+    /*height: 2.5rem;
+    width: 2.5rem;*/
     border: 0;
     padding: 16px;
     border-radius: 5px;
