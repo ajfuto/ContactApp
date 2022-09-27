@@ -12,6 +12,8 @@ let lastName = "";
 
 let rowNum = -1;
 
+let amountLoaded = 5;
+
 function searchOnEnterReg()
 {
 	if(event.keyCode == 13)
@@ -439,7 +441,7 @@ function lazyLoad()
 
 				let j = 0
 				// let row;
-				for( let i=0; i<15; i++ )
+				for( let i=0; i<amountLoaded; i++ )
 				{
 					let row = table.insertRow();
 					let currContact = jsonObject.results[i]
@@ -492,6 +494,12 @@ function lazyLoad()
 		console.log('this is broken');
 		document.getElementById("searchResult").innerHTML = "dummy";
 	}
+}
+
+function loadMore()
+{
+	amountLoaded += 5;
+	lazyLoad();
 }
 
 
