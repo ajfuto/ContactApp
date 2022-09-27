@@ -212,6 +212,7 @@ body {
   }
 
 #addBtn {
+    width: 20%;
     outline: 0;
     background: var(--button-color);
     height: 2.5rem;
