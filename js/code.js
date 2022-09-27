@@ -605,7 +605,7 @@ function deleteContact()
 {
 	let editB = document.getElementById("editBtn");
 	let deleteB = document.getElementById("deleteBtn");
-	
+
 	editB.textContent = "yes";
 	editB.setAttribute("onClick", "deleteHelper()");
 
@@ -618,4 +618,6 @@ function deleteHelper()
 	let addModal = document.getElementById("editModal");
 	addModal.style.opacity = "0";
 	addModal.style.pointerEvents = "none";
+
+	
 }
