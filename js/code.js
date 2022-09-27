@@ -554,7 +554,7 @@ function editContact()
 	emailV.readOnly = false;
 
 	let ays = document.getElementById("areYouSure");
-	ays.value = "";
+	ays.textContent = "";
 
 	saveB.textContent = "save";
 	saveB.setAttribute("onClick", "updateContact()");
@@ -611,7 +611,7 @@ function deleteContact(contactID)
 	let deleteB = document.getElementById("deleteBtn");
 	let ays = document.getElementById("areYouSure");
 
-	ays.value = "are you sure?";
+	ays.textContent = "are you sure?";
 
 	editB.textContent = "yes";
 	editB.setAttribute("onClick", "deleteHelper()");
@@ -661,5 +661,5 @@ function resetButtons()
 
 	deleteB.textContent = "delete";
 	deleteB.setAttribute("onClick", "deleteContact()");
-	ays.value = "";
+	ays.textContent = "";
 }
