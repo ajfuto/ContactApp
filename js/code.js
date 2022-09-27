@@ -500,6 +500,7 @@ function loadMore()
 {
 	amountLoaded += 5;
 	lazyLoad();
+	console.log(amountLoaded);
 }
 
 
