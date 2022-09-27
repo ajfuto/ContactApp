@@ -257,7 +257,7 @@ function addContact()
 	let number = document.getElementById("phoneInput").value;
 	let email = document.getElementById("emailInput").value;
 
-	contactFandN = document.document.getElementById("firstOrLast")
+	contactFandN = document.document.getElementById("firstOrLast");
 
 	document.getElementById("contactAddResult").innerHTML = "";
 
