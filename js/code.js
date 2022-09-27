@@ -601,6 +601,7 @@ function revertContact()
 
 function deleteContact()
 {
+	console.log("delete")
 	editB.textContent = "yes";
 	editB.setAttribute("onClick", "deleteHelper()");
 
