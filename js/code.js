@@ -3,6 +3,7 @@ const extension = 'php';
 
 document.addEventListener('DOMContentLoaded', function () {
 	readCookie();
+	lazyLoad();
 });
 
 let userId = 0;
