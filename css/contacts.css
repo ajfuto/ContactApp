@@ -559,17 +559,14 @@ body {
 
 #loadMoreButton
 {
-    float: center;
-    width: 15%;
-    background: var(--button-color);
-    border-left: none;
-    cursor: pointer;
     outline: 0;
+    background: var(--button-color);
+    width: 15%;
     border: 0;
-    padding: 16px;
+    padding: 20px;
     border-radius: 5px;
     color: var(--text-color);
-    font-size: 19;
+    font-size: 1rem;
 }
 
 #loadMoreButton:hover {
@@ -577,3 +574,11 @@ body {
     transition: 0.25s;
     cursor: pointer;
 }
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
