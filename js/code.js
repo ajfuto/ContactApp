@@ -12,7 +12,7 @@ let lastName = "";
 
 let rowNum = -1;
 
-let amountLoaded = 5;
+let amountLoaded = 15;
 
 function searchOnEnterReg()
 {
@@ -314,7 +314,7 @@ function searchContact()
 
 	if(srch == "")
 	{
-		amountLoaded = 5;
+		amountLoaded = 15;
 		lazyLoad();
 		return;
 	}
