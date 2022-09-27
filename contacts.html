@@ -71,7 +71,7 @@
 
     <div id="searchResult" class="searchResult"></div>
 
-        <table id="contactsTable" onclick="viewModalUp()" style="padding-top: 10px;">
+        <table id="contactsTable" onclick="viewModalUp()">
             <thead>
                 <tr>
                     <th>
@@ -91,7 +91,9 @@
             <tbody id="tableBody">
             </tbody>
         </table>
-        <button id="loadMoreButton" class="button" onclick="loadMore()">load more</button>
+        <div style="padding-top: 10px;">
+            <button id="loadMoreButton" class="button" onclick="loadMore()">load more</button>
+        </div>
     </div>
 
     <div id="editModal" class="modal">
