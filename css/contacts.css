@@ -561,6 +561,7 @@ body {
 {
     float: center;
     text-align: center;
+    left: 50%;
     outline: 0;
     background: var(--button-color);
     width: 15%;
