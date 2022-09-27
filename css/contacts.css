@@ -559,7 +559,7 @@ body {
 
 #loadMoreButton
 {
-    align-items: center;
+    float: center;
     outline: 0;
     background: var(--button-color);
     width: 15%;
