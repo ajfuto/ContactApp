@@ -257,7 +257,17 @@ function addContact()
 	let number = document.getElementById("phoneInput").value;
 	let email = document.getElementById("emailInput").value;
 
+	contactFandN = document.document.getElementById("firstOrLast")
+
 	document.getElementById("contactAddResult").innerHTML = "";
+
+	if(fname == "" && lname == "")
+	{
+		contactFandN.textContent = "please add first or last name";
+		return;
+	}
+
+	contactFandN.textContent = "";
 
 	let tmp = {FirstName:fname,LastName:lname,Email:email,PhoneNumber:number,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );

@@ -546,3 +546,13 @@ body {
     transition: 0.25s;
     cursor: pointer;
 }
+
+#firstOrLast
+{
+    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    color: #D7263D;
+    text-align: center;
+}
