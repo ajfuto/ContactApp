@@ -319,7 +319,7 @@ function searchContact()
 	}
 
 	let loadMoreButton = document.getElementById("loadMoreButton");
-	loadMoreButton.hidden = false;
+	loadMoreButton.hidden = true;
 
 	console.log(srch);
 
