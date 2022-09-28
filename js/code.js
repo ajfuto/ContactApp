@@ -20,6 +20,7 @@ function easterEgg()
 	document.getElementById("easterEgg").hidden = true;
 	if(firstName == "Nintindo" && lastName == "Mario")
 	{
+		console.log("mario");
 		document.getElementById("easterEgg").hidden = false;
 	}
 }
