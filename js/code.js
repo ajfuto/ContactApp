@@ -268,9 +268,9 @@ function addContact()
 		return;
 	}
 
-	var validRegex = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
-	
-	if(!(email.value.match(validRegex)))
+	let atIndex = email.value.indexOf("@");
+	let dotIndex = email.value.indexOf(".");
+	if((atIndex == -1) || dotIndex == -1 || dotIndex < atIndex)
 	{
 		contactFandN.textContent = "please enter valid email";
 		return;
