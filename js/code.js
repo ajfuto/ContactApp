@@ -488,8 +488,8 @@ function lazyLoad()
 
 				if(!jsonObject.results || amountLoaded >= jsonObject.results.length)
 				{
-					amountLoaded = jsonObject.results.length;
 					loadMoreButton.hidden = true;
+					amountLoaded = jsonObject.results.length;	
 				}
 				else
 				{
