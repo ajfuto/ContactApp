@@ -33,7 +33,7 @@
 				$searchResults .= ",";
 			}
 			$searchCount++;
-			$searchResults .= '{"FirstName" : "' . $row["FirstName"] . '", "LastName" : "' . $row["LastName"] . '", "PhoneNumber" : "' . $row["PhoneNumber"] . '","Email" : "' . $row["Email"] . '"}';
+			$searchResults .= '{"FirstName" : "' . $row["FirstName"] . '", "LastName" : "' . $row["LastName"] . '", "PhoneNumber" : "' . $row["PhoneNumber"] . '","Email" : "' . $row["Email"] . '",  "ContactID" : "' . $row["ID"] . '"}';
 		}
 		
 		if( $searchCount == 0 )

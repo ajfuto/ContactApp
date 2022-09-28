@@ -390,10 +390,10 @@ function searchContact()
 					cell.innerHTML = '<a href="mailto:'+currentEmail+'" id="emailTable">'+currentEmail+'</a>';
 
 					// hidden contact ID
-					// cell = row.insertCell();
-					// cell.style.display = "none";
-					// let currentContId = currContact.ContactID
-					// cell.innerHTML = currentContId;
+					cell = row.insertCell();
+					cell.style.display = "none";
+					let currentContId = currContact.ContactID
+					cell.innerHTML = currentContId;
 
 					//cell = row.insertCell();
 					//cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
@@ -501,10 +501,10 @@ function lazyLoad()
 					cell.innerHTML = '<a href="mailto:'+currentEmail+'" id="emailTable">'+currentEmail+'</a>';
 
 					// hidden contact ID
-					// cell = row.insertCell();
-					// cell.style.display = "none";
-					// let currentContId = currContact.ContactID
-					// cell.innerHTML = currentContId;
+					cell = row.insertCell();
+					cell.style.display = "none";
+					let currentContId = currContact.ContactID
+					cell.innerHTML = currentContId;
 
 					//cell = row.insertCell();
 					//cell.innerHTML = '<button id="addButton" class="button" onclick="editModalUp()">edit</button>'
