@@ -17,6 +17,7 @@ let amountLoaded = 20;
 
 function easterEgg()
 {
+	console.log("no mario");
 	mButton = document.getElementById("easterEgg");
 	mButton.style.visibility = 'hidden';
 	if(firstName == "Nintindo" && lastName == "Mario")
