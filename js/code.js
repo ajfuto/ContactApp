@@ -275,6 +275,7 @@ function addContact()
 		{
 			contactFandN.value = "please enter valid email";
 		}
+		return;
 	});
 
 	contactFandN.textContent = "";
