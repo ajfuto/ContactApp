@@ -287,7 +287,7 @@ function addContact()
 
 	let atIndex = email.indexOf("@");
 	let dotIndex = email.lastIndexOf(".");
-	if((atIndex == -1) || dotIndex == -1 || dotIndex < atIndex)
+	if(email.value != "" && ((atIndex == -1) || dotIndex == -1 || dotIndex < atIndex))
 	{
 		contactFandN.textContent = "please enter valid email";
 		return;
@@ -486,7 +486,7 @@ function lazyLoad()
 
 				let j = 0
 
-				if(amountLoaded >= jsonObject.results.length)
+				if(!jsonObject.results || amountLoaded >= jsonObject.results.length)
 				{
 					amountLoaded = jsonObject.results.length;
 					loadMoreButton.hidden = true;
