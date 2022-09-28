@@ -765,7 +765,7 @@ function updateContact()
 
 	emailV.readOnly = true;
 
-	resetButtons()
+	resetButtons();
 }
 
 function revertContact()
