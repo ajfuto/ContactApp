@@ -268,18 +268,9 @@ function addContact()
 		return;
 	}
 
-	/*let atIndex = email.indexOf("@");
+	let atIndex = email.indexOf("@");
 	let dotIndex = email.lastIndexOf(".");
 	if((atIndex == -1) || dotIndex == -1 || dotIndex < atIndex)
-	{
-		contactFandN.textContent = "please enter valid email";
-		return;
-	}
-	*/
-
-	var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
-
-	if(!(email.match(mailformat)))
 	{
 		contactFandN.textContent = "please enter valid email";
 		return;
