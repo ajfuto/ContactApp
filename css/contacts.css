@@ -599,7 +599,7 @@ body {
     font-size: 1rem;
 }
 
-#loadMoreButton:hover {
+#easterEgg:hover {
     background: #c3b713;
     transition: 0.25s;
     cursor: pointer;
