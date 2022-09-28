@@ -268,8 +268,8 @@ function addContact()
 		return;
 	}
 
-	let atIndex = email.value.indexOf("@");
-	let dotIndex = email.value.indexOf(".");
+	let atIndex = email.indexOf("@");
+	let dotIndex = email.indexOf(".");
 	if((atIndex == -1) || dotIndex == -1 || dotIndex < atIndex)
 	{
 		contactFandN.textContent = "please enter valid email";
