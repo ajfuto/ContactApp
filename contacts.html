@@ -11,6 +11,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             readCookie();
             lazyLoad();
+            easterEgg();
         }, false);
     </script>
 </head>
@@ -94,6 +95,7 @@
 
         <div class="loadClass" style="padding-top: 15px;">
             <button id="loadMoreButton" class="button" onclick="loadMore()">load more</button>
+            <button id="easterEgg" class="fa-solid fa-star" onclick="easterEggAction()" hidden="true"></button>
         </div>
     </div>
 

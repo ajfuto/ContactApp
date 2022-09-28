@@ -4,6 +4,7 @@ const extension = 'php';
 document.addEventListener('DOMContentLoaded', function () {
 	readCookie();
 	lazyLoad();
+	easterEgg();
 });
 
 let userId = 0;
@@ -13,6 +14,15 @@ let lastName = "";
 let rowNum = -1;
 
 let amountLoaded = 20;
+
+function easterEgg()
+{
+	document.getElementById("easterEgg").hidden = false;
+}
+function easterEggAction()
+{
+	
+}
 
 function searchOnEnterReg()
 {

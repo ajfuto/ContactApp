@@ -582,3 +582,25 @@ body {
     transition: 0.25s;
     cursor: pointer;
 }
+
+
+#easterEgg
+{
+    float: center;
+    
+    left: 50%;
+    outline: 0;
+    background: #aba00c;
+    width: 15%;
+    border: 0;
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#loadMoreButton:hover {
+    background: #c3b713;
+    transition: 0.25s;
+    cursor: pointer;
+}
