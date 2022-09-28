@@ -735,7 +735,7 @@ function updateContact()
 	let phoneN = document.getElementById("viewPhone");
 	let emailV = document.getElementById("viewEmail");
 	let tbody = document.querySelector("#tableBody");
-	let contactId = tbody.rows[rowNum].cells[4].innerHTML;
+	let contactId = tbody.rows[rowNum].cells[4].textContent;
 
 	console.log(contactId);
 
