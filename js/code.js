@@ -277,9 +277,9 @@ function addContact()
 	}
 	*/
 
-	var mail_format = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+	var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
 
-	if(!(email.match(enteredEmail)))
+	if(!(email.match(mailformat)))
 	{
 		contactFandN.textContent = "please enter valid email";
 		return;
