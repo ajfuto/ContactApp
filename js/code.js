@@ -17,11 +17,14 @@ let amountLoaded = 20;
 
 function easterEgg()
 {
-	document.getElementById("easterEgg").hidden = false;
+	if(firstName == "Nentindo" && lastName == "Mario")
+	{
+		document.getElementById("easterEgg").hidden = false;
+	}
 }
 function easterEggAction()
 {
-	
+
 }
 
 function searchOnEnterReg()
