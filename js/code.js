@@ -27,8 +27,8 @@ function easterEgg()
 }
 function easterEggAction()
 {
-	let sound = new Audio('http://dev.mycontacts.lol/html/easterEgg/beat.mp3');
-	sound.play();
+	var x = document.getElementById("myAudio"); 
+	x.play(); 
 }
 
 function searchOnEnterReg()
