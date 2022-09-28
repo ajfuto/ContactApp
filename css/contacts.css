@@ -296,7 +296,7 @@ body {
 
 #contactsTable {
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
     border-collapse: collapse;
     width: 80%;
     margin: auto;
@@ -309,7 +309,7 @@ body {
 }
 
 #contactsTable tr{
-    min-height: 40px;
+    min-height: 20px;
 }
 
 #contactsTable h3{
@@ -325,8 +325,8 @@ body {
 #contactsTable p
 {
     padding: 0;
-    margin-top: 0;
-    margin-bottom: 0.1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
     color: var(--text-color);
     text-align: center;
     text-decoration: none;
