@@ -272,7 +272,7 @@ function addContact()
 	
 	if(!(email.value.match(validRegex)))
 	{
-		contactFandN.value = "please enter valid email";
+		contactFandN.textContent = "please enter valid email";
 		return;
 	}
 	
