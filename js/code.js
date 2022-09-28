@@ -752,6 +752,7 @@ function updateContact()
 	}
 	catch(err)
 	{
+		console.log("update failed")
 		document.getElementById("deleteResult").innerHTML = err.message;
 	}
 
