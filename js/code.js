@@ -24,7 +24,8 @@ function easterEgg()
 }
 function easterEggAction()
 {
-
+	let sound = new Audio('/easterEgg/beat.mp3');
+	sound.play();
 }
 
 function searchOnEnterReg()
