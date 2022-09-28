@@ -267,16 +267,15 @@ function addContact()
 		contactFandN.textContent = "please add first or last name";
 		return;
 	}
-	email.addEventListener('input', function (e) 
+
+	var validRegex = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+	
+	if(!(email.value.match(validRegex)))
 	{
-		var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-		
-		if(!(e.value.match(validRegex)))
-		{
-			contactFandN.value = "please enter valid email";
-		}
+		contactFandN.value = "please enter valid email";
 		return;
-	});
+	}
+	
 
 	contactFandN.textContent = "";
 
