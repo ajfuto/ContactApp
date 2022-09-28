@@ -20,7 +20,7 @@ function easterEgg()
 	console.log("no mario");
 	mButton = document.getElementById("easterEgg");
 	mButton.style.visibility = 'visible';
-	if(firstName == "Nintindo" && lastName == "Mario")
+	if(firstName == "Nintendo" && lastName == "Mario")
 	{
 		console.log("mario");
 		mButton.style.visibility = 'visible';
