@@ -17,12 +17,10 @@ let amountLoaded = 20;
 
 function easterEgg()
 {
-	console.log("no mario");
 	mButton = document.getElementById("easterEgg");
 	mButton.style.visibility = 'hidden';
 	if(firstName == "Nintendo" && lastName == "Mario")
 	{
-		console.log("mario");
 		mButton.style.visibility = 'visible';
 	}
 }
@@ -737,7 +735,7 @@ function updateContact()
 	let phoneN = document.getElementById("viewPhone");
 	let emailV = document.getElementById("viewEmail");
 	let tbody = document.querySelector("#tableBody");
-	let contactId = tbody.rows[rowNum].cells[4].textContent;
+	let contactId = tbody.rows[rowNum].cells[4].innerHTML;
 
 	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
