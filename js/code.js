@@ -715,7 +715,7 @@ function updateContact()
 	let tbody = document.querySelector("#tableBody");
 	let contactId = tbody.rows[rowNum].cells[4].innerHTML
 
-	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value};
+	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/UpdateContact.' + extension;
