@@ -311,14 +311,14 @@ function addContact()
 		addModal.style.opacity = "0";
 		addModal.style.pointerEvents = "none";
 
-		searchContact();
+		
 
 	}
 	catch(err)
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	
+	searchContact();
 }
 
 function searchContact()
