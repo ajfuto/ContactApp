@@ -738,7 +738,10 @@ function updateContact()
 	let contactId = tbody.rows[rowNum].cells[4].textContent;
 
 	console.log(contactId+ "cid");
+	console.log(firstN.value);
 	console.log(lastN.value);
+	console.log(emailV.value);
+	console.log(phoneN.value);
 
 	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
