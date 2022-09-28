@@ -737,6 +737,8 @@ function updateContact()
 	let tbody = document.querySelector("#tableBody");
 	let contactId = tbody.rows[rowNum].cells[4].innerHTML;
 
+	console.log(contactId);
+
 	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
@@ -752,7 +754,7 @@ function updateContact()
 	}
 	catch(err)
 	{
-		console.log("update failed")
+		console.log("update failed");
 		document.getElementById("deleteResult").innerHTML = err.message;
 	}
 
