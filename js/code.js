@@ -288,7 +288,7 @@ function addContact()
 
 	let atIndex = email.indexOf("@");
 	let dotIndex = email.lastIndexOf(".");
-	if(email.value != "" && ((atIndex == -1) || dotIndex == -1 || dotIndex < atIndex))
+	if(email != "" && (atIndex == -1 || dotIndex == -1 || dotIndex < atIndex))
 	{
 		contactFandN.textContent = "please enter valid email";
 		return;
