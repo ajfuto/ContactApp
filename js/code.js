@@ -737,6 +737,7 @@ function updateContact()
 	let tbody = document.querySelector("#tableBody");
 	let contactId = tbody.rows[rowNum].cells[4].textContent;
 
+	console.log(contactId+ "cid");
 	console.log(contactId);
 
 	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value,UserID:userId};
