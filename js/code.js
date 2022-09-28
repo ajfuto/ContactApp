@@ -275,6 +275,8 @@ function addContact()
 		contactFandN.textContent = "please enter valid email";
 		return;
 	}
+
+	let addModal = document.getElementById("addModal");
 	
 
 	contactFandN.textContent = "";
@@ -306,7 +308,11 @@ function addContact()
 			}
 		};
 		xhr.send(jsonPayload);
+		addModal.style.opacity = "0";
+		addModal.style.pointerEvents = "none";
+
 		searchContact();
+
 	}
 	catch(err)
 	{
