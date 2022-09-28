@@ -163,13 +163,13 @@ function doLogin()
 
 function register()
 {
-	firstName = document.getElementById("firstname").value
-	lastName = document.getElementById("lastname").value
+	firstName = document.getElementById("firstname").value;
+	lastName = document.getElementById("lastname").value;
 	let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
 
 	if(firstName == "" || lastName == "" || login == "" || password == ""){
-		document.getElementById("registerResult").innerHTML = "please fill out each box completely"
+		document.getElementById("registerResult").innerHTML = "please fill out each box completely";
 		return;
 	}
 
@@ -383,12 +383,12 @@ function searchContact()
 				
 				tBody.innerHTML = '';
 
-				let j = 0
+				let j = 0;
 				// let row;
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
 					let row = table.insertRow();
-					let currContact = jsonObject.results[i]
+					let currContact = jsonObject.results[i];
 					console.log(currContact);
 					// if(i%4==0)
 					// {
@@ -414,7 +414,7 @@ function searchContact()
 					// hidden contact ID
 					cell = row.insertCell();
 					cell.style.display = "none";
-					let currentContId = currContact.ContactID
+					let currentContId = currContact.ContactID;
 					cell.innerHTML = currentContId;
 
 					//cell = row.insertCell();
@@ -426,8 +426,8 @@ function searchContact()
 			}
 			else
 			{
-				console.log("state" + this.readyState)
-				console.log("status " + this.status)
+				console.log("state" + this.readyState);
+				console.log("status " + this.status);
 			}
 		};
 		console.log(jsonPayload);
@@ -483,7 +483,7 @@ function lazyLoad()
 				
 				tBody.innerHTML = '';
 
-				let j = 0
+				let j = 0;
 
 				if(!jsonObject.results || amountLoaded >= jsonObject.results.length)
 				{
@@ -525,7 +525,7 @@ function lazyLoad()
 					// hidden contact ID
 					cell = row.insertCell();
 					cell.style.display = "none";
-					let currentContId = currContact.ContactID
+					let currentContId = currContact.ContactID;
 					cell.innerHTML = currentContId;
 
 					//cell = row.insertCell();
@@ -537,8 +537,8 @@ function lazyLoad()
 			}
 			else
 			{
-				console.log("state" + this.readyState)
-				console.log("status " + this.status)
+				console.log("state" + this.readyState);
+				console.log("status " + this.status);
 			}
 		};
 		console.log(jsonPayload);
@@ -684,7 +684,7 @@ function editModalUp()
 	{
 		addModal.style.opacity = "0";
 		addModal.style.pointerEvents = "none";
-		resetButtons()
+		resetButtons();
 
 	}
 	window.onclick = function(event) 
@@ -693,7 +693,7 @@ function editModalUp()
 		{
 			addModal.style.opacity = "0";
 			addModal.style.pointerEvents = "none";
-			resetButtons()
+			resetButtons();
 
 		}
 	}
