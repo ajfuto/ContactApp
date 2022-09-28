@@ -17,7 +17,7 @@ let amountLoaded = 20;
 
 function easterEgg()
 {
-	if(firstName == "Nentindo" && lastName == "Mario")
+	if(firstName == "Nintindo" && lastName == "Mario")
 	{
 		document.getElementById("easterEgg").hidden = false;
 	}
