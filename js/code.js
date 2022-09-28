@@ -712,6 +712,26 @@ function updateContact()
 	let lastN = document.getElementById("viewLastName");
 	let phoneN = document.getElementById("viewPhone");
 	let emailV = document.getElementById("viewEmail");
+	let tbody = document.querySelector("#tableBody");
+	let contactId = tbody.rows[rowNum].cells[4].innerHTML
+
+	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/UpdateContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.send(jsonPayload);
+		searchContact();
+	}
+	catch(err)
+	{
+		document.getElementById("deleteResult").innerHTML = err.message;
+	}
 
 	console.log("updateContact Clicked");
 
