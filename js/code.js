@@ -743,7 +743,7 @@ function updateContact()
 	console.log(emailV.value);
 	console.log(phoneN.value);
 
-	let tmp = {contactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value,UserID:userId};
+	let tmp = {ContactID:contactId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value,UserID:userId};
 	let jsonPayload = JSON.stringify( tmp );
 
 	let url = urlBase + '/UpdateContact.' + extension;
@@ -754,7 +754,6 @@ function updateContact()
 	try
 	{
 		xhr.send(jsonPayload);
-		searchContact();
 	}
 	catch(err)
 	{
@@ -773,6 +772,8 @@ function updateContact()
 	emailV.readOnly = true;
 
 	resetButtons();
+
+	searchContact();
 }
 
 function revertContact()
