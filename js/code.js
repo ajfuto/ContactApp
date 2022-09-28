@@ -17,11 +17,12 @@ let amountLoaded = 20;
 
 function easterEgg()
 {
-	document.getElementById("easterEgg").hidden = true;
+	mButton = document.getElementById("easterEgg");
+	mButton.style.visibility = 'hidden';
 	if(firstName == "Nintindo" && lastName == "Mario")
 	{
 		console.log("mario");
-		document.getElementById("easterEgg").hidden = false;
+		mButton.style.visibility = 'visible';
 	}
 }
 function easterEggAction()
