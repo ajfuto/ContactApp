@@ -24,7 +24,7 @@ function easterEgg()
 }
 function easterEggAction()
 {
-	let sound = new Audio('/easterEgg/beat.mp3');
+	let sound = new Audio('http://dev.mycontacts.lol/html/easterEgg/beat.mp3');
 	sound.play();
 }
 
