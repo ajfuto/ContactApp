@@ -685,6 +685,7 @@ function editModalUp()
 		addModal.style.opacity = "0";
 		addModal.style.pointerEvents = "none";
 		resetButtons();
+		searchContact();
 
 	}
 	window.onclick = function(event) 
@@ -772,8 +773,6 @@ function updateContact()
 	emailV.readOnly = true;
 
 	resetButtons();
-
-	searchContact();
 }
 
 function revertContact()

@@ -312,6 +312,11 @@ body {
     min-height: 20px;
 }
 
+#contactsTable tr :hover{
+    min-height: 20px;
+    filter: brightness(150%);
+}
+
 #contactsTable h3{
     font-size: 1.25rem;
     margin: 0;
