@@ -695,6 +695,7 @@ function editModalUp()
 			addModal.style.opacity = "0";
 			addModal.style.pointerEvents = "none";
 			resetButtons();
+			searchContact();
 
 		}
 	}
