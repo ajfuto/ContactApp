@@ -19,30 +19,20 @@
 	else
 	{
 		# Search search string against all columns in Contacts table
-		$stmt = $conn->prepare("select * from Contacts where (FirstName like ? OR LastName like ? OR Email like ? OR PhoneNumber like ?) and UserID=?");
-		$searchString = "%" . $inData["search"] . "%";
-		$stmt->bind_param("sssss", $searchString, $searchString, $searchString, $searchString, $inData["userId"]);
+		$stmt = $conn->prepare("select * from Contacts where ID=?");
+		$id = $inData["id"];
+		$stmt->bind_param("s", $id);
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
 		
-		while($row = $result->fetch_assoc())
+		if( $row = $result->fetch_assoc()  )
 		{
-			if( $searchCount > 0 )
-			{
-				$searchResults .= ",";
-			}
-			$searchCount++;
-			$searchResults .= '{"FirstName" : "' . $row["FirstName"] . '", "LastName" : "' . $row["LastName"] . '", "PhoneNumber" : "' . $row["PhoneNumber"] . '","Email" : "' . $row["Email"] . '",  "ContactID" : "' . $row["ID"] . '"}';
-		}
-		
-		if( $searchCount == 0 )
-		{
-			returnWithError( "No Records Found" );
+			returnWithInfo( $row['ID'], $row['FirstName'], $row['LastName'], $row['PhoneNumber'], $row['Email'], $row['DateCreated'], $row['DateEdited'] );
 		}
 		else
 		{
-			returnWithInfo( $searchResults );
+			returnWithError("No Records Found");
 		}
 		
 		$stmt->close();
@@ -66,9 +56,9 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $searchResults )
+	function returnWithInfo( $id, $firstName, $lastName, $phone, $email, $dcreated, $dedited )
 	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
+		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","phoneNumber":"' . $phone . '","email":"' . $email . '","create":"' . $dcreated . '","edited":"' . $dedited . '","error":""}';
 		sendResultInfoAsJson( $retValue );
 	}
 ?>

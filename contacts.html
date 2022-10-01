@@ -3,124 +3,136 @@
 <head>
     <title>Contacts | mycontacts.lol</title>
     <script src="https://kit.fontawesome.com/6901f3fa14.js" crossorigin="anonymous"></script>
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/contacts.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
     <script type="text/javascript" src="js/code.js">
-        document.addEventListener('DOMContentLoaded', function() 
-        {
+        document.addEventListener('DOMContentLoaded', function () {
             readCookie();
+            lazyLoad();
+            easterEgg();
         }, false);
     </script>
-    <h1>hello, user</h1>
-    <span id="loadUserName"></span><br />
 </head>
 
 <body>
-    <div class="main">
-        <div>
-            <button id="addBtn" class="button" onclick="addModalUp()"><i class="fa-regular fa-plus"></i></button>
-
-            <div id="addModal" class="modal">
-
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-
-                    <h2>add contact</h2>
-                    <p>first name</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                    <p>last name</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                    <p>phone</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                    <p>email</p>
-                    <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                    <button id="addButton" class="button">add</button>
-                </div>
-
+    <nav id="navbar">
+        <div id="navContent">
+            <div id="navLeft">
+                <i class="fa-solid fa-user"></i>
+                <h3 id="loadUserName">welcome, user</h3>
             </div>
-            <h2>your contacts</h2>
+
+            <div id="navCenter">
+                <h1>MyContacts</h1>
+            </div>
+
+            <div id="navRight">
+                <button id="logoutButton" type="button" onclick="doLogout()">
+                    <h3>log out <i class="fa-solid fa-right-from-bracket"></i></h3> 
+                </button>
+            </div>
         </div>
-        <form class="searchContactClass" style="padding-top: 10px;">
-            <h3>search</h3>
-            <input type="text" id="searchText" placeholder="fname, lname, (111)111-1111, or example@example.com" name="" required="">
-            <button id="searchButton" type="submit" onclick="searchContact()"><i class="fa fa-search" ></i></button>
-          </form>
-          <!--
-        <table class="modalTable" style="width:100%">
-            <tr>
-                <th>
-                    <button id="searchBtn" class="button" onclick="searchModalUp()">search</button>
+    </nav>
 
-                     The Modal 
-                    <div id="searchModal" class="modal">
+    <div class="searchContactClass" style="padding-top: 10px;">
+        <input type="text" id="searchText" placeholder="search for a contact..." name="" required=""
+            onkeyup="liveSearchContacts()" />
+        <button id="addBtn" class="button" onclick="addModalUp()"><i class="fa-regular fa-plus"></i></button>
+    </div>
 
-                         Modal content 
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h2>search</h2>
-                            <input id="searchText" type="text" name="" required=""
-                                placeholder="first name, last name, (111)111-1111, or example@example.com"
-                                class="modalInput">
-                            <button id="searchNameButton" class="button">go</button>
-                        </div>
+    <div>
+            
 
-                    </div>
-                </th>
-                <th>
-                    <button id="addBtn" class="button" onclick="addModalUp()">add</button>
+    <div id="addModal" class="modal">
 
-                    The Modal
-                    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
 
-                        Modal content
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
+            <h2>Add Contact</h2>
+            <p>first name</p>
+            <input id="firstNameInput" placeholder="first name" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <p>last name</p>
+            <input id="lastNameInput" placeholder="last name" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <p>phone</p>
+            <input id="phoneInput" placeholder="(111) 111-1111" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <p>email</p>
+            <input id="emailInput" placeholder="example@example.com" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterAdd()" />
+            <h3 id="firstOrLast"></h3>
+            <button id="addButton" class="button" onclick="addContact()">add</button>
+            <span id="contactAddResult"></span>
+        </div>
 
-                            <h2>add contact</h2>
-                            <p>first name</p>
-                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                            <p>last name</p>
-                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                            <p>phone</p>
-                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                            <p>email</p>
-                            <input id="firstNameInput" type="text" name="" required="" class="modalInput">
-                            <button id="addButton" class="button">add</button>
-                        </div>
+    </div>
 
-                    </div>
-                </th>
-            </tr>
-        </table>
-    -->
+    <div id="searchResult" class="searchResult"></div>
 
-        <table id="contactsTable" style="width:100%">
+        <table id="contactsTable" onclick="viewModalUp()">
             <thead>
                 <tr>
                     <th>
-                        <h3>first</h3>
+                        <h3>first name</h3>
                     </th>
                     <th>
-                        <h3>last</h3>
+                        <h3>last name</h3>
                     </th>
                     <th>
-                        <h3>phone</h3>
+                        <h3>phone number</h3>
                     </th>
                     <th>
-                        <h3>email</h3>
+                        <h3>email address</h3>
                     </th>
-                    <th>
-                        </tj>
                 </tr>
             </thead>
-            <tbody>
-                <tr></tr>
+            <tbody id="tableBody">
             </tbody>
         </table>
+
+        <div class="loadClass" style="padding-top: 15px;">
+            <button id="loadMoreButton" class="button" onclick="loadMore()">load more</button>
+        </div>
+        <div class="loadClass" style="padding-top: 15px;">
+            <audio id="myAudio">
+                <source src="/audio/Star.mp3" type="audio/mpeg">
+            </audio>
+            <button id="easterEgg" class="fa-solid fa-star" onclick="easterEggAction()" hidden="true"></button>
+        </div>
     </div>
+
+    <div id="editModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <p>first name</p>
+            <input id="viewFirstName" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterEdit()" />
+            <p>last name</p>
+            <input id="viewLastName" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterEdit()" />
+            <p>phone</p>
+            <input id="viewPhone" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterEdit()" />
+            <p>email</p>
+            <input id="viewEmail" type="text" name="" required="" class="modalInput"
+                onkeyup="searchOnEnterEdit()" />
+            
+            <h3 id="areYouSure"></h3>
+            <button id="editBtn" class="editButton" onclick="editContact()">edit</button>
+            <button id="deleteBtn" class="deleteButton" onclick="deleteContact()">delete</button>
+            <span id="deleteResult"></span>
+            <div style="padding-bottom: 55px;">
+
+            </div>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

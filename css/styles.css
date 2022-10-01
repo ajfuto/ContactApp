@@ -205,23 +205,7 @@ body {
     cursor: pointer;
   }
 
-  #addBtn {
-    vertical-align:top;
-    outline: 0;
-    background: var(--button-color);
-    width: 10%;
-    border: 0;
-    padding: 10px;
-    border-radius: 5px;
-    color: var(--text-color);
-    font-size: 1rem;
-    float: right;
-}
-#addBtn:hover {
-    background: var(--button-hover-color);
-    transition: 0.25s;
-    cursor: pointer;
-}
+ 
 
 .modalButton:hover {
     background: var(--button-hover-color);
@@ -297,7 +281,8 @@ body {
     text-align: center;
 }
 
-#contactsTable p{
+#contactsTable p
+{
     padding: 0;
     margin-top: 0;
     margin-bottom: 0.1rem;
@@ -306,9 +291,52 @@ body {
     text-decoration: none;
 }
 
-.searchContactClass{
-    padding: 10px;
+#emailTable a 
+{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+    color: var(--text-color);
+    text-align: center;
+    background-color: transparent;
+    text-decoration: underline;
 }
+
+#emailTable:link 
+{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0.1rem;
+    color: var(--text-color);
+    text-align: center;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+
+#emailTable:hover 
+{
+  color: var(--button-color);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#emailTable:active 
+{
+  color: var(--button-hover-color);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#contactsTable td
+{
+    text-align: left;
+    color: var(--text-color);
+}
+
+/* .searchContactClass{
+    padding: 10px;
+} */
 
 .searchContactClass h3{
     font-size: 1.25rem;
@@ -321,8 +349,8 @@ body {
 }
 .searchContactClass input {
     width: 80%;
-    float: left;
-    padding: 15px 0;
+    /* float: left; */
+    padding: 16px 0;
     color: var(--text-color);
     font-size: 1rem;
     margin-bottom: 20px;
@@ -333,23 +361,64 @@ body {
     background: var(--background-color)
 }
 
-#searchButton
+#addBtn
 {
-    float: right;
+    float: left;
     width: 20%;
     background: var(--button-color);
     border-left: none;
     cursor: pointer;
     outline: 0;
     border: 0;
-    padding: 15px;
+    padding: 16px 0;
     border-radius: 5px;
     color: var(--text-color);
     font-size: 1rem;
 }
 
-#searchButton:hover {
+#addBtn:hover {
     background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.editButton
+{
+    float: left;
+    width: 40%;
+    outline: 0;
+    background: var(--button-color);
+    width: 100%;
+    border: 0;
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.editButton:hover {
+    background: var(--button-hover-color);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.deleteButton
+{
+    float: right;
+    width: 40%;
+    background: #D7263D;
+    border-left: none;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 16px 0;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.deleteButton:hover {
+    background: #ec324b;
     transition: 0.25s;
     cursor: pointer;
 }
