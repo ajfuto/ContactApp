@@ -612,6 +612,7 @@ function addModalUp()
 	{
 		addModal.style.opacity = "0";
 		addModal.style.pointerEvents = "none";
+		searchContact();
 
 	}
 	window.onclick = function(event) 
@@ -620,7 +621,7 @@ function addModalUp()
 		{
 			addModal.style.opacity = "0";
 			addModal.style.pointerEvents = "none";
-
+			searchContact();
 		}
 	}
 }
