@@ -291,7 +291,7 @@ function addContact()
 		contactFandN.textContent = "please enter valid email";
 		return;
 	}
-
+ 
 	let addModal = document.getElementById("addModal");
 	
 
@@ -321,20 +321,17 @@ function addContact()
 
 				let addModal = document.getElementById("addModal");
 				addModal.style.opacity = "0";
+				searchContact();
 			}
 		};
 		xhr.send(jsonPayload);
 		addModal.style.opacity = "0";
 		addModal.style.pointerEvents = "none";
-
-		
-
 	}
 	catch(err)
 	{
 		document.getElementById("contactAddResult").innerHTML = err.message;
 	}
-	searchContact();
 }
 
 function searchContact()
