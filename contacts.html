@@ -30,7 +30,7 @@
 
             <div id="navRight">
                 <button id="logoutButton" type="button" onclick="doLogout()">
-                    <h3>log out <i class="fa-solid fa-right-from-bracket"></i></h3> 
+                    <h3>log out <i class="fa-solid fa-right-from-bracket"></i></h3>
                 </button>
             </div>
         </div>
@@ -43,34 +43,34 @@
     </div>
 
     <div>
-            
 
-    <div id="addModal" class="modal">
 
-        <div class="modal-content">
-            <span class="close">&times;</span>
+        <div id="addModal" class="modal">
 
-            <h2>Add Contact</h2>
-            <p>first name</p>
-            <input id="firstNameInput" placeholder="first name" type="text" name="" required="" class="modalInput"
-                onkeyup="searchOnEnterAdd()" />
-            <p>last name</p>
-            <input id="lastNameInput" placeholder="last name" type="text" name="" required="" class="modalInput"
-                onkeyup="searchOnEnterAdd()" />
-            <p>phone</p>
-            <input id="phoneInput" placeholder="(111) 111-1111" type="text" name="" required="" class="modalInput"
-                onkeyup="searchOnEnterAdd()" />
-            <p>email</p>
-            <input id="emailInput" placeholder="example@example.com" type="text" name="" required="" class="modalInput"
-                onkeyup="searchOnEnterAdd()" />
-            <h3 id="firstOrLast"></h3>
-            <button id="addButton" class="button" onclick="addContact()">add</button>
+            <div class="modal-content">
+                <span class="close">&times;</span>
+
+                <h2>Add Contact</h2>
+                <p>first name</p>
+                <input id="firstNameInput" placeholder="first name" type="text" name="" required="" class="modalInput"
+                    onkeyup="searchOnEnterAdd()" />
+                <p>last name</p>
+                <input id="lastNameInput" placeholder="last name" type="text" name="" required="" class="modalInput"
+                    onkeyup="searchOnEnterAdd()" />
+                <p>phone</p>
+                <input id="phoneInput" placeholder="(111) 111-1111" type="text" name="" required="" class="modalInput"
+                    onkeyup="searchOnEnterAdd()" />
+                <p>email</p>
+                <input id="emailInput" placeholder="example@example.com" type="text" name="" required=""
+                    class="modalInput" onkeyup="searchOnEnterAdd()" />
+                <h3 id="firstOrLast"></h3>
+                <button id="addButton" class="button" onclick="addContact();">add</button>
             <span id="contactAddResult"></span>
+            </div>
+
         </div>
 
-    </div>
-
-    <div id="searchResult" class="searchResult"></div>
+        <div id="searchResult" class="searchResult"></div>
 
         <table id="contactsTable" onclick="viewModalUp()">
             <thead>
@@ -98,7 +98,7 @@
         </div>
         <div class="loadClass" style="padding-top: 15px;">
             <audio id="myAudio">
-                <source src="/audio/Star.mp3" type="audio/mpeg">
+                <source src="Star.mp3" type="audio/mpeg">
             </audio>
             <button id="easterEgg" class="fa-solid fa-star" onclick="easterEggAction()" hidden="true"></button>
         </div>
@@ -113,15 +113,12 @@
             <input id="viewFirstName" type="text" name="" required="" class="modalInput"
                 onkeyup="searchOnEnterEdit()" />
             <p>last name</p>
-            <input id="viewLastName" type="text" name="" required="" class="modalInput"
-                onkeyup="searchOnEnterEdit()" />
+            <input id="viewLastName" type="text" name="" required="" class="modalInput" onkeyup="searchOnEnterEdit()" />
             <p>phone</p>
-            <input id="viewPhone" type="text" name="" required="" class="modalInput"
-                onkeyup="searchOnEnterEdit()" />
+            <input id="viewPhone" type="text" name="" required="" class="modalInput" onkeyup="searchOnEnterEdit()" />
             <p>email</p>
-            <input id="viewEmail" type="text" name="" required="" class="modalInput"
-                onkeyup="searchOnEnterEdit()" />
-            
+            <input id="viewEmail" type="text" name="" required="" class="modalInput" onkeyup="searchOnEnterEdit()" />
+
             <h3 id="areYouSure"></h3>
             <button id="editBtn" class="editButton" onclick="editContact()">edit</button>
             <button id="deleteBtn" class="deleteButton" onclick="deleteContact()">delete</button>
