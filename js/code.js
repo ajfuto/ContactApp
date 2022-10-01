@@ -818,9 +818,7 @@ function deleteHelper()
 	let emailV = document.getElementById("viewEmail");
 
 
-	let addModal = document.getElementById("editModal");
-	addModal.style.opacity = "0";
-	addModal.style.pointerEvents = "none";
+	
 
 	let tmp = {UserID:userId,FirstName:firstN.value,LastName:lastN.value,Email:emailV.value,PhoneNumber:phoneN.value};
 	let jsonPayload = JSON.stringify( tmp );
@@ -833,6 +831,9 @@ function deleteHelper()
 	try
 	{
 		xhr.send(jsonPayload);
+		let addModal = document.getElementById("editModal");
+		addModal.style.opacity = "0";
+		addModal.style.pointerEvents = "none";
 		searchContact();
 		resetButtons();
 	}
@@ -840,6 +841,8 @@ function deleteHelper()
 	{
 		document.getElementById("deleteResult").innerHTML = err.message;
 	}
+
+	
 }
 
 function resetButtons()
